@@ -246,11 +246,10 @@ console.log('%cSeu treino. Sua motivação. Sua evolução.', 'font-size: 14px; 
 // ===================================
 document.addEventListener('DOMContentLoaded', function() {
     const themeBtn = document.getElementById('theme-toggle');
-    const currentTheme = localStorage.getItem('theme');
+    if (!themeBtn) return;
   
-    if (currentTheme === 'dark') {
-      document.body.classList.add('dark-mode');
-    }
+    const currentTheme = localStorage.getItem('theme');
+    if (currentTheme === 'dark') document.body.classList.add('dark-mode');
   
     themeBtn.addEventListener('click', () => {
       document.body.classList.toggle('dark-mode');

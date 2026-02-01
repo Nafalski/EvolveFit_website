@@ -12,8 +12,8 @@ const textos = {
         'nav-download': 'Download',
         
         // Hero Section (index.html)
-        'hero-slogan': 'Seu treino. Sua motivação. Sua evolução.',
-        'hero-description': 'O app perfeito para adolescentes que querem transformar sua vida com hábitos saudáveis, treinos personalizados e muita motivação!',
+        'hero-slogan': 'Transforme seus hábitos. Eleve seu potencial. Evolua todos os dias.',
+        'hero-description': 'Treino, nutrição e motivação personalizados para a sua jornada de evolução.',
         'btn-conheca': 'Conheça o app',
         'btn-baixar': 'Baixar agora',
         
@@ -24,7 +24,7 @@ const textos = {
         // Features Preview (index.html)
         'section-title-features': 'Por que escolher o EvolveFit?',
         'feature-1-title': 'Treinos Personalizados',
-        'feature-1-desc': 'Treinos adaptados especialmente para adolescentes, respeitando seu nível e objetivos.',
+        'feature-1-desc': 'Treinos adaptados ao seu nível e objetivos. Evolua no seu ritmo, com consistência e inteligência.',
         'feature-2-title': 'Gamificação',
         'feature-2-desc': 'Ganhe pontos, complete desafios e evolua enquanto se exercita!',
         'feature-3-title': 'Motivação Diária',
@@ -34,7 +34,7 @@ const textos = {
         'btn-ver-recursos': 'Ver todos os recursos',
         
         // Footer
-        'footer-tagline': 'Transformando vidas através de hábitos saudáveis e motivação!',
+        'footer-tagline': 'Evolução contínua. Disciplina inteligente. Transformação real.',
         'footer-links': 'Links Rápidos',
         'footer-social': 'Redes Sociais',
         'footer-contact': 'Contato',
@@ -47,32 +47,32 @@ const textos = {
         
         // Página Sobre (sobre.html)
         'page-title-sobre': 'Sobre o EvolveFit',
-        'page-subtitle-sobre': 'Criado por jovens, para jovens',
+        'page-subtitle-sobre': 'Para quem decide evoluir',
         'sobre-objetivo-title': 'Nosso Objetivo',
-        'sobre-objetivo-p1': 'O EvolveFit foi desenvolvido com um propósito claro: motivar adolescentes a adotarem hábitos saudáveis de forma divertida e descomplicada. Sabemos que a adolescência é um período de descobertas, transformações e, muitas vezes, inseguranças. Por isso, criamos um ambiente acolhedor e motivador que incentiva o cuidado com o corpo e a mente.',
-        'sobre-objetivo-p2': 'Acreditamos que a saúde não é apenas sobre estética, mas sobre sentir-se bem, ter energia, autoconfiança e construir uma base sólida para o futuro. Nosso app combina tecnologia, gamificação e motivação para tornar essa jornada prazerosa e envolvente.',
-        'sobre-beneficios-title': 'Benefícios para Adolescentes',
+        'sobre-objetivo-p1': 'O EvolveFit nasceu com um propósito simples: ajudar pessoas a alcançarem resultados reais através de disciplina, constância e inteligência. Não importa sua idade ou nível atual. O que importa é a decisão de começar e a coragem de continuar evoluindo.',
+        'sobre-objetivo-p2': 'Acreditamos que evolução é sobre consistência, não sobre perfeição. Saúde, energia e autoconfiança vêm de hábitos sustentáveis. Nosso app combina tecnologia, motivação e personalização para que sua jornada seja real, mensurável e transformadora.',
+        'sobre-beneficios-title': 'O que você ganha',
         'benefit-1-title': 'Desenvolvimento Físico',
-        'benefit-1-desc': 'Treinos adequados para a idade, respeitando o crescimento e desenvolvimento do corpo adolescente. Fortaleça músculos, melhore a resistência e aumente a flexibilidade de forma segura.',
+        'benefit-1-desc': 'Treinos que respeitam seu corpo e seu ritmo. Fortaleça músculos, melhore a resistência e aumente a flexibilidade de forma segura e progressiva.',
         'benefit-2-title': 'Bem-estar Mental',
         'benefit-2-desc': 'Exercícios físicos liberam endorfina, o hormônio da felicidade! Reduza ansiedade, estresse e melhore sua autoestima através de uma rotina ativa e saudável.',
         'benefit-3-title': 'Gamificação',
         'benefit-3-desc': 'Transforme seus treinos em uma experiência divertida! Ganhe pontos, complete desafios, desbloqueie conquistas e veja seu progresso de forma visual e motivadora.',
         'benefit-4-title': 'Comunidade',
-        'benefit-4-desc': 'Conecte-se com outros adolescentes que também estão em busca de uma vida mais saudável. Compartilhe progresso, receba apoio e motivação da comunidade.',
+        'benefit-4-desc': 'Conecte-se com quem também decidiu evoluir. Compartilhe progresso, receba apoio e motivação de uma comunidade focada em resultados reais.',
         'benefit-5-title': 'Educação',
         'benefit-5-desc': 'Aprenda sobre nutrição, anatomia e como seu corpo funciona. Conhecimento é poder, e quanto mais você entende sobre saúde, melhor pode cuidar de si.',
         'benefit-6-title': 'Rotina Saudável',
         'benefit-6-desc': 'Desenvolva disciplina e organização criando uma rotina de exercícios que se encaixa na sua vida. Construa hábitos duradouros que vão te acompanhar para sempre.',
         'mission-title': 'Nossa Missão',
-        'mission-text': '"Ser a plataforma que inspira adolescentes a descobrirem seu potencial, superarem limites e construírem uma relação positiva com saúde e bem-estar, de forma divertida, acessível e segura."',
+        'mission-text': '"Ser a plataforma que inspira pessoas a evoluírem — no corpo e na mente — através de disciplina inteligente, tecnologia e uma comunidade que acredita em transformação real."',
         'mission-signature': '— Equipe EvolveFit',
         
         // Página Recursos (recursos.html)
         'page-title-recursos': 'Recursos do App',
         'page-subtitle-recursos': 'Tudo que você precisa para transformar sua vida',
         'recurso-1-title': 'Sugestão de Treinos Personalizados',
-        'recurso-1-p': 'Receba treinos adaptados especialmente para você! Nosso sistema analisa seu nível de condicionamento, objetivos e disponibilidade para criar rotinas perfeitas que respeitam seu corpo e fase de crescimento.',
+        'recurso-1-p': 'Receba treinos adaptados especialmente para você! Nosso sistema analisa seu nível de condicionamento, objetivos e disponibilidade para criar rotinas que respeitam seu corpo e sua realidade.',
         'recurso-1-li1': 'Treinos para iniciantes, intermediários e avançados',
         'recurso-1-li2': 'Exercícios com e sem equipamentos',
         'recurso-1-li3': 'Vídeos explicativos de cada movimento',
@@ -151,8 +151,8 @@ const textos = {
         'nav-download': 'Download',
         
         // Hero Section (index.html)
-        'hero-slogan': 'Your workout. Your motivation. Your evolution.',
-        'hero-description': 'The perfect app for teenagers who want to transform their lives with healthy habits, personalized workouts and lots of motivation!',
+        'hero-slogan': 'Transform your habits. Elevate your potential. Evolve every day.',
+        'hero-description': 'Personalized training, nutrition and motivation for your evolution journey.',
         'btn-conheca': 'Know the app',
         'btn-baixar': 'Download now',
         
@@ -163,7 +163,7 @@ const textos = {
         // Features Preview (index.html)
         'section-title-features': 'Why choose EvolveFit?',
         'feature-1-title': 'Personalized Workouts',
-        'feature-1-desc': 'Workouts adapted especially for teenagers, respecting your level and goals.',
+        'feature-1-desc': 'Workouts adapted to your level and goals. Evolve at your own pace, with consistency and intelligence.',
         'feature-2-title': 'Gamification',
         'feature-2-desc': 'Earn points, complete challenges and level up while exercising!',
         'feature-3-title': 'Daily Motivation',
@@ -173,7 +173,7 @@ const textos = {
         'btn-ver-recursos': 'See all features',
         
         // Footer
-        'footer-tagline': 'Transforming lives through healthy habits and motivation!',
+        'footer-tagline': 'Continuous evolution. Smart discipline. Real transformation.',
         'footer-links': 'Quick Links',
         'footer-social': 'Social Media',
         'footer-contact': 'Contact',
@@ -186,32 +186,32 @@ const textos = {
         
         // About Page (sobre.html)
         'page-title-sobre': 'About EvolveFit',
-        'page-subtitle-sobre': 'Created by young people, for young people',
+        'page-subtitle-sobre': 'For everyone who decides to evolve',
         'sobre-objetivo-title': 'Our Objective',
-        'sobre-objetivo-p1': 'EvolveFit was developed with a clear purpose: to motivate teenagers to adopt healthy habits in a fun and uncomplicated way. We know that adolescence is a period of discovery, transformation and, often, insecurities. That\'s why we created a welcoming and motivating environment that encourages care for body and mind.',
-        'sobre-objetivo-p2': 'We believe that health is not just about aesthetics, but about feeling good, having energy, self-confidence and building a solid foundation for the future. Our app combines technology, gamification and motivation to make this journey enjoyable and engaging.',
-        'sobre-beneficios-title': 'Benefits for Teenagers',
+        'sobre-objetivo-p1': 'EvolveFit was born with a simple purpose: to help people achieve real results through discipline, consistency and intelligence. Your age or current level doesn\'t matter. What matters is the decision to start and the courage to keep evolving.',
+        'sobre-objetivo-p2': 'We believe evolution is about consistency, not perfection. Health, energy and self-confidence come from sustainable habits. Our app combines technology, motivation and personalization so your journey is real, measurable and transformative.',
+        'sobre-beneficios-title': 'What you gain',
         'benefit-1-title': 'Physical Development',
-        'benefit-1-desc': 'Age-appropriate workouts that respect the growth and development of the teenage body. Strengthen muscles, improve endurance and increase flexibility safely.',
+        'benefit-1-desc': 'Workouts that respect your body and your pace. Strengthen muscles, improve endurance and increase flexibility safely and progressively.',
         'benefit-2-title': 'Mental Well-being',
         'benefit-2-desc': 'Physical exercise releases endorphins, the happiness hormone! Reduce anxiety, stress and improve your self-esteem through an active and healthy routine.',
         'benefit-3-title': 'Gamification',
         'benefit-3-desc': 'Turn your workouts into a fun experience! Earn points, complete challenges, unlock achievements and see your progress in a visual and motivating way.',
         'benefit-4-title': 'Community',
-        'benefit-4-desc': 'Connect with other teenagers who are also seeking a healthier life. Share progress, receive support and motivation from the community.',
+        'benefit-4-desc': 'Connect with others who have also decided to evolve. Share progress, receive support and motivation from a community focused on real results.',
         'benefit-5-title': 'Education',
         'benefit-5-desc': 'Learn about nutrition, anatomy and how your body works. Knowledge is power, and the more you understand about health, the better you can take care of yourself.',
         'benefit-6-title': 'Healthy Routine',
         'benefit-6-desc': 'Develop discipline and organization by creating an exercise routine that fits your life. Build lasting habits that will stay with you forever.',
         'mission-title': 'Our Mission',
-        'mission-text': '"To be the platform that inspires teenagers to discover their potential, overcome limits and build a positive relationship with health and wellness, in a fun, accessible and safe way."',
+        'mission-text': '"To be the platform that inspires people to evolve — in body and mind — through smart discipline, technology and a community that believes in real transformation."',
         'mission-signature': '— EvolveFit Team',
         
         // Features Page (recursos.html)
         'page-title-recursos': 'App Features',
         'page-subtitle-recursos': 'Everything you need to transform your life',
         'recurso-1-title': 'Personalized Workout Suggestions',
-        'recurso-1-p': 'Receive workouts tailored especially for you! Our system analyzes your fitness level, goals and availability to create perfect routines that respect your body and growth phase.',
+        'recurso-1-p': 'Receive workouts tailored especially for you! Our system analyzes your fitness level, goals and availability to create routines that respect your body and your reality.',
         'recurso-1-li1': 'Workouts for beginners, intermediate and advanced',
         'recurso-1-li2': 'Exercises with and without equipment',
         'recurso-1-li3': 'Explanatory videos for each movement',

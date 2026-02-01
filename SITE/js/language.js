@@ -60,9 +60,9 @@ function updatePageContent(lang) {
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
         if (lang === 'pt') {
-            metaDescription.content = 'EvolveFit - O app que motiva adolescentes a terem hábitos saudáveis com treino, alimentação e frases motivacionais.';
+            metaDescription.content = 'EvolveFit - Treino, nutrição e motivação personalizados para a sua jornada de evolução. Para qualquer pessoa que queira evoluir.';
         } else {
-            metaDescription.content = 'EvolveFit - The app that motivates teenagers to have healthy habits with workouts, nutrition and motivational quotes.';
+            metaDescription.content = 'EvolveFit - Personalized training, nutrition and motivation for your evolution journey. For everyone who wants to evolve.';
         }
     }
 }

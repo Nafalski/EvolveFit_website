@@ -146,7 +146,7 @@ body { /* base de tipografia e plano de fundo inicial */
 .mobile-menu-toggle span { /* as barrinhas do hamburguer */
     width: 25px; /* largura */
     height: 3px; /* espessura */
-    background: var(--white); /* cor */
+    background: var(--text); /* cor segue o tema */
     border-radius: 2px; /* cantos arredondados */
     transition: transform 0.3s ease, background 0.3s ease; /* transições */
 }
@@ -298,8 +298,8 @@ body { /* base de tipografia e plano de fundo inicial */
 
 .btn-secondary { /* botão secundário contornado */
     background: transparent; /* sem fundo */
-    color: var(--white); /* texto branco sobre escuro */
-    border: 2px solid var(--primary-red); /* contorno vermelho */
+    color: var(--accent); /* texto segue o tema (legível em ambos) */
+    border: 2px solid var(--accent); /* contorno vermelho */
     box-shadow: none; /* sem sombra */
 }
 
@@ -321,13 +321,14 @@ body { /* base de tipografia e plano de fundo inicial */
 /* ===================================
    Frase Motivacional do Dia
    =================================== */
-.daily-motivation { /* faixa com gradiente escuro */
+.daily-motivation { /* faixa da frase do dia */
     padding: var(--spacing-xl) 0;
-    background: linear-gradient(135deg, #0D2345, #0B1D3A);
+    background: var(--surface-2); /* segue o tema */
 }
 
 .motivation-card { /* cartão principal da frase */
-    background: #0F274B; /* azul escuro */
+    background: var(--surface); /* segue o tema */
+    color: var(--text);
     border-radius: var(--border-radius-lg);
     padding: var(--spacing-lg);
     display: flex;
@@ -336,7 +337,7 @@ body { /* base de tipografia e plano de fundo inicial */
     box-shadow: var(--shadow-lg);
     max-width: 900px; /* limita largura */
     margin: 0 auto; /* centraliza */
-    border: 1px solid #223A66; /* borda sutil */
+    border: 1px solid var(--border);
 }
 
 .motivation-icon { /* ícone grande (emoji/icone) */
@@ -349,7 +350,7 @@ body { /* base de tipografia e plano de fundo inicial */
 }
 
 .motivation-content h3 { /* título do bloco */
-    color: var(--white);
+    color: var(--text);
     margin-bottom: var(--spacing-xs);
     font-size: 1.2rem;
 }
@@ -357,7 +358,7 @@ body { /* base de tipografia e plano de fundo inicial */
 .motivation-text { /* frase do dia */
     font-size: 1.2rem;
     font-weight: var(--font-weight-semibold);
-    color: var(--gray); /* cinza para suavidade */
+    color: var(--muted);
     line-height: 1.6;
 }
 
@@ -410,7 +411,7 @@ body { /* base de tipografia e plano de fundo inicial */
    =================================== */
 .features-preview { /* seção com cards de recursos */
     padding: var(--spacing-xxl) 0;
-    background: var(--light); /* azul escuro */
+    background: var(--surface-2);
 }
 
 .section-title { /* título genérico de seção */
@@ -429,13 +430,14 @@ body { /* base de tipografia e plano de fundo inicial */
 }
 
 .feature-card { /* card individual */
-    background: #0F274B;
+    background: var(--surface);
+    color: var(--text);
     padding: var(--spacing-lg);
     border-radius: var(--border-radius-lg);
     text-align: center;
     box-shadow: var(--shadow-md);
-    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease; /* transições específicas */
-    border: 1px solid #223A66;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    border: 1px solid var(--border);
 }
 
 .feature-card:hover { /* efeito hover */
@@ -452,11 +454,11 @@ body { /* base de tipografia e plano de fundo inicial */
 .feature-card h3 { /* título do card */
     font-size: 1.2rem;
     margin-bottom: var(--spacing-sm);
-    color: var(--white);
+    color: var(--text);
 }
 
 .feature-card p { /* texto do card */
-    color: var(--gray);
+    color: var(--muted);
     line-height: 1.6;
 }
 
@@ -468,8 +470,8 @@ body { /* base de tipografia e plano de fundo inicial */
    Páginas Internas
    =================================== */
 .page-header { /* faixa do topo nas páginas internas */
-    background: linear-gradient(135deg, #0B1D3A, #000000); /* gradiente escuro */
-    color: var(--white);
+    background: var(--surface-2);
+    color: var(--text);
     padding: var(--spacing-xxl) 0;
     text-align: center;
 }
@@ -557,12 +559,14 @@ body { /* base de tipografia e plano de fundo inicial */
 }
 
 .benefit-card { /* cartão de benefício */
-    background: #0F274B;
+    background: var(--surface);
+    color: var(--text);
     padding: var(--spacing-lg);
     border-radius: var(--border-radius-lg);
     box-shadow: var(--shadow-md);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
-    border-top: 4px solid var(--primary-red); /* barra superior */
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--accent);
 }
 
 .benefit-card:hover { /* hover com elevação */
@@ -578,11 +582,11 @@ body { /* base de tipografia e plano de fundo inicial */
 .benefit-card h3 { /* título do benefício */
     font-size: 1.2rem;
     margin-bottom: var(--spacing-sm);
-    color: var(--white);
+    color: var(--text);
 }
 
 .benefit-card p { /* texto do benefício */
-    color: var(--gray);
+    color: var(--muted);
     line-height: 1.7;
 }
 
@@ -593,14 +597,14 @@ body { /* base de tipografia e plano de fundo inicial */
     margin-top: var(--spacing-xxl);
 }
 
-.mission-card { /* cartão de missão com gradiente */
-    background: linear-gradient(135deg, #0E2548, #0B1D3A);
-    color: var(--white);
+.mission-card { /* cartão de missão */
+    background: var(--surface);
+    color: var(--text);
     padding: var(--spacing-xl);
     border-radius: var(--border-radius-lg);
     text-align: center;
     box-shadow: var(--shadow-xl);
-    border: 1px solid #223A66;
+    border: 1px solid var(--border);
 }
 
 .mission-card h2 { /* título da missão */
@@ -668,31 +672,32 @@ body { /* base de tipografia e plano de fundo inicial */
 /* ===================================
    CTA Section
    =================================== */
-.cta-section { /* faixa com gradiente escuro */
+.cta-section { /* faixa do CTA */
     padding: var(--spacing-xxl) 0;
-    background: linear-gradient(135deg, #0B1D3A, #000000);
+    background: var(--surface-2);
 }
 
 .cta-card { /* cartão central do CTA */
-    background: #142F59;
+    background: var(--surface);
+    color: var(--text);
     padding: var(--spacing-xl);
     border-radius: var(--border-radius-lg);
     text-align: center;
     box-shadow: var(--shadow-xl);
     max-width: 700px;
     margin: 0 auto;
-    border: 1px solid #223A66;
+    border: 1px solid var(--border);
 }
 
 .cta-card h2 { /* título do CTA */
     font-size: 1.8rem;
     margin-bottom: var(--spacing-sm);
-    color: var(--white);
+    color: var(--text);
 }
 
 .cta-card p { /* descrição do CTA */
     font-size: 1.05rem;
-    color: var(--gray);
+    color: var(--muted);
     margin-bottom: var(--spacing-lg);
 }
 
@@ -711,13 +716,14 @@ body { /* base de tipografia e plano de fundo inicial */
 }
 
 .download-card { /* card de download */
-    background: #0F274B;
+    background: var(--surface);
+    color: var(--text);
     padding: var(--spacing-xl);
     border-radius: var(--border-radius-lg);
     box-shadow: var(--shadow-lg);
     text-align: center;
     transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-    border: 1px solid #223A66;
+    border: 1px solid var(--border);
 }
 
 .download-card:hover { /* hover com destaque */
@@ -734,11 +740,11 @@ body { /* base de tipografia e plano de fundo inicial */
 .download-card h2 { /* título do card */
     font-size: 1.5rem;
     margin-bottom: var(--spacing-sm);
-    color: var(--white);
+    color: var(--text);
 }
 
 .download-card p { /* descrição do card */
-    color: var(--gray);
+    color: var(--muted);
     margin-bottom: var(--spacing-lg);
     line-height: 1.7;
 }
@@ -746,13 +752,14 @@ body { /* base de tipografia e plano de fundo inicial */
 .download-info { /* blocos de meta-informação */
     margin-top: var(--spacing-lg);
     padding-top: var(--spacing-md);
-    border-top: 2px solid var(--gray-light);
+    border-top: 2px solid var(--border);
     text-align: left;
 }
 
 .download-info p { /* linhas de informação */
     margin-bottom: var(--spacing-xs);
     font-size: 0.9rem;
+    color: var(--muted);
 }
 
 .qrcode-container { /* moldura para QR */
@@ -760,15 +767,15 @@ body { /* base de tipografia e plano de fundo inicial */
     justify-content: center;
     margin: var(--spacing-lg) 0;
     padding: var(--spacing-md);
-    background: #142F59;
+    background: var(--surface-2);
     border-radius: var(--border-radius);
-    border: 1px solid #223A66;
+    border: 1px solid var(--border);
 }
 
 .qr-hint { /* legenda/ajuda do QR */
     margin-top: var(--spacing-md);
     font-size: 0.9rem;
-    color: var(--gray);
+    color: var(--muted);
 }
 
 .pwa-instructions { /* instruções de PWA */
@@ -781,7 +788,7 @@ body { /* base de tipografia e plano de fundo inicial */
 .pwa-instructions h3 { /* título de instruções */
     font-size: 1.1rem;
     margin-bottom: var(--spacing-sm);
-    color: var(--dark); /* contrasta em fundo claro */
+    color: var(--text); /* contrasta em fundo claro */
 }
 
 .pwa-instructions ol { /* lista numerada */
@@ -790,7 +797,7 @@ body { /* base de tipografia e plano de fundo inicial */
 
 .pwa-instructions li { /* itens das instruções */
     margin-bottom: var(--spacing-xs);
-    color: var(--gray);
+    color: var(--muted);
     line-height: 1.6;
 }
 
@@ -799,7 +806,7 @@ body { /* base de tipografia e plano de fundo inicial */
    =================================== */
 .installation-section { /* faixa da instalação */
     padding: var(--spacing-xxl) 0;
-    background: #0A1E3C; /* azul escuro */
+    background: var(--surface-2);
 }
 
 .installation-steps { /* grid de passos */
@@ -810,13 +817,14 @@ body { /* base de tipografia e plano de fundo inicial */
 }
 
 .step-card { /* cartão de passo */
-    background: #0F274B;
+    background: var(--surface);
+    color: var(--text);
     padding: var(--spacing-lg);
     border-radius: var(--border-radius-lg);
     box-shadow: var(--shadow-md);
     text-align: center;
-    position: relative; /* para elementos decorativos se necessário */
-    border: 1px solid #223A66;
+    position: relative;
+    border: 1px solid var(--border);
 }
 
 .step-number { /* número do passo (medalhão) */
@@ -836,7 +844,7 @@ body { /* base de tipografia e plano de fundo inicial */
 .step-card h3 { /* título do passo */
     font-size: 1.2rem;
     margin-bottom: var(--spacing-sm);
-    color: var(--dark); /* pensado para fundos claros (ajustado por overrides do tema) */
+    color: var(--text); /* segue o tema (claro/escuro) */
 }
 
 .step-card p { /* descrição do passo */
@@ -845,7 +853,8 @@ body { /* base de tipografia e plano de fundo inicial */
 }
 
 .security-note { /* bloco de segurança */
-    background: #0F274B;
+    background: var(--surface);
+    color: var(--text);
     padding: var(--spacing-lg);
     border-radius: var(--border-radius-lg);
     display: flex;
@@ -854,7 +863,7 @@ body { /* base de tipografia e plano de fundo inicial */
     box-shadow: var(--shadow-md);
     max-width: 800px;
     margin: 0 auto;
-    border: 1px solid #223A66;
+    border: 1px solid var(--border);
 }
 
 .security-icon { /* ícone grande */
@@ -892,7 +901,7 @@ body { /* base de tipografia e plano de fundo inicial */
 .footer-section h3,
 .footer-section h4 { /* títulos das colunas do rodapé */
     margin-bottom: var(--spacing-md);
-    color: var(--white);
+    color: var(--text);
 }
 
 .footer-logo { /* marca no rodapé */
@@ -961,7 +970,7 @@ body { /* base de tipografia e plano de fundo inicial */
         top: 60px; /* abaixo da navbar */
         left: -100%; /* escondido inicialmente */
         width: 100%;
-        background: var(--primary-blue); /* fundo consistente */
+        background: var(--surface); /* fundo segue o tema */
         flex-direction: column; /* itens empilhados */
         padding: var(--spacing-lg);
         box-shadow: var(--shadow-lg);
@@ -1335,19 +1344,28 @@ html, body { /* aplica cores de fundo e texto do tema ativo */
 .footer-section a:hover { color: var(--accent); }
 .footer-bottom { color: var(--muted); }
   
-/* ---------- Tipografia e textos ---------- */
-h1, h2, h3, h4, h5, h6,
-.page-title, .section-title, .hero-title,
-.footer-logo, .logo {
+/* ---------- Tipografia e textos (sempre contraste correto) ---------- */
+.hero, .page-header {
     color: var(--text);
 }
-.hero-description, .hero-slogan,
-.motivation-text, .benefit-card p,
-.feature-card p, .download-card p, .security-text p,
+h1, h2, h3, h4, h5, h6,
+.page-title, .page-subtitle, .section-title, .hero-title,
+.footer-logo, .logo,
+.step-card h3, .download-card h2, .security-text h3,
+.cta-card h2, .benefit-card h3, .feature-card h3,
+.about-text h2, .benefits-section h2, .feature-main-content h2,
+.footer-section h3, .footer-section h4, .mission-card h2,
+.pwa-instructions h3, .motivation-content h3 {
+    color: var(--text);
+}
+.hero-description, .hero-slogan, .page-subtitle,
+.motivation-text, .benefit-card p, .feature-card p, .download-card p,
+.security-text p, .step-card p, .download-info p, .qr-hint,
+.pwa-instructions li, .pwa-instructions p,
 .footer-section p {
     color: var(--muted);
 }
-  
+
 /* ---------- HERO / PAGE-HEADER (gradiente + bolhas do topo) ---------- */
 .hero, .page-header {
     position: relative;
@@ -1391,7 +1409,7 @@ h1, h2, h3, h4, h5, h6,
     border: 1px solid var(--border);
 }
   
-/* ---------- Links in-text ---------- */
+/* ---------- Links no conteúdo (menu/rodapé têm regras próprias abaixo) ---------- */
 a:not(.btn) { color: var(--accent-2); }
 a:not(.btn):hover { color: var(--accent); }
   
@@ -1467,8 +1485,8 @@ body.dark-mode .icon-sun { opacity: 0; transform: translateY(-10px); }
    FIX: contraste dos botões no hover
    (impede regras globais de <a> afetarem .btn)
    ============================= */
-a.btn, .btn, .btn:visited { 
-    color: #fff !important;  /* mantém legibilidade */
+a.btn:not(.btn-secondary), .btn:not(.btn-secondary), .btn:visited:not(.btn-secondary) { 
+    color: #fff !important;  /* primário: texto branco */
     text-decoration: none !important; /* remove sublinhado */
 }
 .btn-primary {
@@ -1492,5 +1510,18 @@ a.btn, .btn, .btn:visited {
     background: color-mix(in srgb, var(--accent) 14%, transparent) !important;
     color: var(--accent) !important;
 }
-a:not(.btn) { color: var(--accent-2); }
-a:not(.btn):hover { color: var(--accent); }
+
+/* ---------- Menu: links seguem o tema (sem azul) ---------- */
+.nav-menu a, .nav-menu a:link, .nav-menu a:visited {
+    color: var(--text) !important;
+}
+.nav-menu a:hover, .nav-menu a.active {
+    color: #fff !important;
+}
+/* ---------- Rodapé: links azuis para indicar clicáveis ---------- */
+.footer-section a, .footer-section a:link, .footer-section a:visited {
+    color: var(--accent-2) !important;
+}
+.footer-section a:hover {
+    color: var(--accent) !important;
+}
