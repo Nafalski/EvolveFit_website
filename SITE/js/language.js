@@ -1,5 +1,5 @@
 /**
- * TreinoTeen+ - Sistema de Troca de Idiomas
+ * EvolveFit - Sistema de Troca de Idiomas
  * Gerencia a troca de idioma e salva a preferência no localStorage
  */
 
@@ -10,7 +10,7 @@ const DEFAULT_LANGUAGE = 'pt';
  * Obtém o idioma atual do localStorage ou retorna o padrão
  */
 function getCurrentLanguage() {
-    const savedLanguage = localStorage.getItem('treinoteen-language');
+    const savedLanguage = localStorage.getItem('evolvefit-language');
     return savedLanguage || DEFAULT_LANGUAGE;
 }
 
@@ -18,7 +18,7 @@ function getCurrentLanguage() {
  * Salva o idioma no localStorage
  */
 function saveLanguage(lang) {
-    localStorage.setItem('treinoteen-language', lang);
+    localStorage.setItem('evolvefit-language', lang);
 }
 
 /**
@@ -46,6 +46,12 @@ function updatePageContent(lang) {
             }
         }
     });
+
+    // Download link usa origem dinâmica (sem domínio hardcoded)
+    const downloadLinkEl = document.getElementById('download-link');
+    if (downloadLinkEl) {
+        downloadLinkEl.textContent = window.location.origin + '/download';
+    }
     
     // Atualiza o atributo lang do HTML
     document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
@@ -54,9 +60,9 @@ function updatePageContent(lang) {
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
         if (lang === 'pt') {
-            metaDescription.content = 'TreinoTeen+ - O app que motiva adolescentes a terem hábitos saudáveis com treino, alimentação e frases motivacionais.';
+            metaDescription.content = 'EvolveFit - O app que motiva adolescentes a terem hábitos saudáveis com treino, alimentação e frases motivacionais.';
         } else {
-            metaDescription.content = 'TreinoTeen+ - The app that motivates teenagers to have healthy habits with workouts, nutrition and motivational quotes.';
+            metaDescription.content = 'EvolveFit - The app that motivates teenagers to have healthy habits with workouts, nutrition and motivational quotes.';
         }
     }
 }

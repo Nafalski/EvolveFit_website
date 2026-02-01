@@ -1,5 +1,5 @@
 /**
- * TreinoTeen+ - Traduções
+ * EvolveFit - Traduções
  * Objeto centralizado com todos os textos traduzidos
  */
 
@@ -22,7 +22,7 @@ const textos = {
         'motivation-loading': 'Gerando motivação...',
         
         // Features Preview (index.html)
-        'section-title-features': 'Por que escolher o TreinoTeen+?',
+        'section-title-features': 'Por que escolher o EvolveFit?',
         'feature-1-title': 'Treinos Personalizados',
         'feature-1-desc': 'Treinos adaptados especialmente para adolescentes, respeitando seu nível e objetivos.',
         'feature-2-title': 'Gamificação',
@@ -46,10 +46,10 @@ const textos = {
         'footer-link-download': 'Download',
         
         // Página Sobre (sobre.html)
-        'page-title-sobre': 'Sobre o TreinoTeen+',
+        'page-title-sobre': 'Sobre o EvolveFit',
         'page-subtitle-sobre': 'Criado por jovens, para jovens',
         'sobre-objetivo-title': 'Nosso Objetivo',
-        'sobre-objetivo-p1': 'O TreinoTeen+ foi desenvolvido com um propósito claro: motivar adolescentes a adotarem hábitos saudáveis de forma divertida e descomplicada. Sabemos que a adolescência é um período de descobertas, transformações e, muitas vezes, inseguranças. Por isso, criamos um ambiente acolhedor e motivador que incentiva o cuidado com o corpo e a mente.',
+        'sobre-objetivo-p1': 'O EvolveFit foi desenvolvido com um propósito claro: motivar adolescentes a adotarem hábitos saudáveis de forma divertida e descomplicada. Sabemos que a adolescência é um período de descobertas, transformações e, muitas vezes, inseguranças. Por isso, criamos um ambiente acolhedor e motivador que incentiva o cuidado com o corpo e a mente.',
         'sobre-objetivo-p2': 'Acreditamos que a saúde não é apenas sobre estética, mas sobre sentir-se bem, ter energia, autoconfiança e construir uma base sólida para o futuro. Nosso app combina tecnologia, gamificação e motivação para tornar essa jornada prazerosa e envolvente.',
         'sobre-beneficios-title': 'Benefícios para Adolescentes',
         'benefit-1-title': 'Desenvolvimento Físico',
@@ -66,7 +66,7 @@ const textos = {
         'benefit-6-desc': 'Desenvolva disciplina e organização criando uma rotina de exercícios que se encaixa na sua vida. Construa hábitos duradouros que vão te acompanhar para sempre.',
         'mission-title': 'Nossa Missão',
         'mission-text': '"Ser a plataforma que inspira adolescentes a descobrirem seu potencial, superarem limites e construírem uma relação positiva com saúde e bem-estar, de forma divertida, acessível e segura."',
-        'mission-signature': '— Equipe TreinoTeen+',
+        'mission-signature': '— Equipe EvolveFit',
         
         // Página Recursos (recursos.html)
         'page-title-recursos': 'Recursos do App',
@@ -102,11 +102,11 @@ const textos = {
         'recurso-5-li3': 'Ajustes automáticos de intensidade',
         'recurso-5-li4': 'Interface conversacional amigável',
         'cta-title': 'Pronto para começar sua jornada?',
-        'cta-subtitle': 'Baixe agora o TreinoTeen+ e transforme sua vida!',
+        'cta-subtitle': 'Baixe agora o EvolveFit e transforme sua vida!',
         'cta-button': 'Baixar Agora',
         
         // Página Download (download.html)
-        'page-title-download': 'Baixe o TreinoTeen+',
+        'page-title-download': 'Baixe o EvolveFit',
         'page-subtitle-download': 'Disponível para Android e Web (PWA)',
         'download-android-title': 'Versão Android (APK)',
         'download-android-desc': 'Baixe o aplicativo completo para Android e tenha acesso a todos os recursos offline.',
@@ -117,9 +117,9 @@ const textos = {
         'download-requirements-text': 'Android 7.0 ou superior',
         'download-qr-title': 'Scan para Baixar',
         'download-qr-desc': 'Use a câmera do seu celular para escanear o QR Code e baixar diretamente:',
-        'download-link-text': 'treinoteen.com/download',
+        'download-link-text': '/download',
         'download-pwa-title': 'Versão Web (PWA)',
-        'download-pwa-desc': 'Acesse o TreinoTeen+ diretamente pelo navegador! Funciona em qualquer dispositivo.',
+        'download-pwa-desc': 'Acesse o EvolveFit diretamente pelo navegador! Funciona em qualquer dispositivo.',
         'download-pwa-button': 'Usar Versão Web',
         'pwa-install-title': 'Como instalar como PWA:',
         'pwa-step-1': 'Acesse o site no navegador',
@@ -134,9 +134,9 @@ const textos = {
         'install-step-3-title': 'Abra o arquivo APK',
         'install-step-3-desc': 'Localize o arquivo baixado e toque nele para iniciar a instalação.',
         'install-step-4-title': 'Instale e aproveite!',
-        'install-step-4-desc': 'Confirme a instalação e comece a usar o TreinoTeen+ imediatamente!',
+        'install-step-4-desc': 'Confirme a instalação e comece a usar o EvolveFit imediatamente!',
         'security-title': 'Segurança',
-        'security-text': 'O TreinoTeen+ é desenvolvido com foco total na segurança e privacidade dos usuários. Todos os dados são protegidos e nunca compartilhamos informações pessoais com terceiros.',
+        'security-text': 'O EvolveFit é desenvolvido com foco total na segurança e privacidade dos usuários. Todos os dados são protegidos e nunca compartilhamos informações pessoais com terceiros.',
         
         // Página Privacidade (privacidade.html)
         'page-title-privacidade': 'Política de Privacidade',
@@ -161,7 +161,7 @@ const textos = {
         'motivation-loading': 'Generating motivation...',
         
         // Features Preview (index.html)
-        'section-title-features': 'Why choose TreinoTeen+?',
+        'section-title-features': 'Why choose EvolveFit?',
         'feature-1-title': 'Personalized Workouts',
         'feature-1-desc': 'Workouts adapted especially for teenagers, respecting your level and goals.',
         'feature-2-title': 'Gamification',
@@ -185,10 +185,10 @@ const textos = {
         'footer-link-download': 'Download',
         
         // About Page (sobre.html)
-        'page-title-sobre': 'About TreinoTeen+',
+        'page-title-sobre': 'About EvolveFit',
         'page-subtitle-sobre': 'Created by young people, for young people',
         'sobre-objetivo-title': 'Our Objective',
-        'sobre-objetivo-p1': 'TreinoTeen+ was developed with a clear purpose: to motivate teenagers to adopt healthy habits in a fun and uncomplicated way. We know that adolescence is a period of discovery, transformation and, often, insecurities. That\'s why we created a welcoming and motivating environment that encourages care for body and mind.',
+        'sobre-objetivo-p1': 'EvolveFit was developed with a clear purpose: to motivate teenagers to adopt healthy habits in a fun and uncomplicated way. We know that adolescence is a period of discovery, transformation and, often, insecurities. That\'s why we created a welcoming and motivating environment that encourages care for body and mind.',
         'sobre-objetivo-p2': 'We believe that health is not just about aesthetics, but about feeling good, having energy, self-confidence and building a solid foundation for the future. Our app combines technology, gamification and motivation to make this journey enjoyable and engaging.',
         'sobre-beneficios-title': 'Benefits for Teenagers',
         'benefit-1-title': 'Physical Development',
@@ -205,7 +205,7 @@ const textos = {
         'benefit-6-desc': 'Develop discipline and organization by creating an exercise routine that fits your life. Build lasting habits that will stay with you forever.',
         'mission-title': 'Our Mission',
         'mission-text': '"To be the platform that inspires teenagers to discover their potential, overcome limits and build a positive relationship with health and wellness, in a fun, accessible and safe way."',
-        'mission-signature': '— TreinoTeen+ Team',
+        'mission-signature': '— EvolveFit Team',
         
         // Features Page (recursos.html)
         'page-title-recursos': 'App Features',
@@ -241,11 +241,11 @@ const textos = {
         'recurso-5-li3': 'Automatic intensity adjustments',
         'recurso-5-li4': 'Friendly conversational interface',
         'cta-title': 'Ready to start your journey?',
-        'cta-subtitle': 'Download TreinoTeen+ now and transform your life!',
+        'cta-subtitle': 'Download EvolveFit now and transform your life!',
         'cta-button': 'Download Now',
         
         // Download Page (download.html)
-        'page-title-download': 'Download TreinoTeen+',
+        'page-title-download': 'Download EvolveFit',
         'page-subtitle-download': 'Available for Android and Web (PWA)',
         'download-android-title': 'Android Version (APK)',
         'download-android-desc': 'Download the complete Android app and have access to all offline features.',
@@ -256,9 +256,9 @@ const textos = {
         'download-requirements-text': 'Android 7.0 or higher',
         'download-qr-title': 'Scan to Download',
         'download-qr-desc': 'Use your phone camera to scan the QR Code and download directly:',
-        'download-link-text': 'treinoteen.com/download',
+        'download-link-text': '/download',
         'download-pwa-title': 'Web Version (PWA)',
-        'download-pwa-desc': 'Access TreinoTeen+ directly through your browser! Works on any device.',
+        'download-pwa-desc': 'Access EvolveFit directly through your browser! Works on any device.',
         'download-pwa-button': 'Use Web Version',
         'pwa-install-title': 'How to install as PWA:',
         'pwa-step-1': 'Access the site in your browser',
@@ -273,9 +273,9 @@ const textos = {
         'install-step-3-title': 'Open the APK file',
         'install-step-3-desc': 'Locate the downloaded file and tap it to start the installation.',
         'install-step-4-title': 'Install and enjoy!',
-        'install-step-4-desc': 'Confirm the installation and start using TreinoTeen+ immediately!',
+        'install-step-4-desc': 'Confirm the installation and start using EvolveFit immediately!',
         'security-title': 'Security',
-        'security-text': 'TreinoTeen+ is developed with a total focus on user security and privacy. All data is protected and we never share personal information with third parties.',
+        'security-text': 'EvolveFit is developed with a total focus on user security and privacy. All data is protected and we never share personal information with third parties.',
         
         // Privacy Page (privacidade.html)
         'page-title-privacidade': 'Privacy Policy',

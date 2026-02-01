@@ -1,5 +1,5 @@
 /**
- * TreinoTeen+ - QR Code Generator
+ * EvolveFit - QR Code Generator
  * Gera QR Code dinamicamente para download do app
  */
 
@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (qrcodeContainer) {
         // URL para download (pode ser alterada depois)
         const downloadUrl = window.location.href + '#download';
-        const fullDownloadUrl = 'https://treinoteen.com/download';
+        const fullDownloadUrl = window.location.origin + '/download';
         
         // Atualiza o link exibido
         if (downloadLinkElement) {

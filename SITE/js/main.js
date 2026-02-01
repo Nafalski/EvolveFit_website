@@ -1,5 +1,5 @@
 /**
- * TreinoTeen+ - JavaScript Principal
+ * EvolveFit - JavaScript Principal
  * Gerencia funcionalidades gerais do site
  */
 
@@ -136,7 +136,7 @@ const motivationalPhrases = {
  */
 function getDailyPhrase() {
     // Obtém o idioma atual
-    const currentLang = localStorage.getItem('treinoteen-language') || 'pt';
+    const currentLang = localStorage.getItem('evolvefit-language') || 'pt';
     const phrases = motivationalPhrases[currentLang] || motivationalPhrases.pt;
     
     const today = new Date();
@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (refreshButton) {
         refreshButton.addEventListener('click', function() {
             // Obtém o idioma atual
-            const currentLang = localStorage.getItem('treinoteen-language') || 'pt';
+            const currentLang = localStorage.getItem('evolvefit-language') || 'pt';
             const phrases = motivationalPhrases[currentLang] || motivationalPhrases.pt;
             
             // Seleciona uma frase aleatória diferente da atual
@@ -238,7 +238,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // ===================================
 // Console Message
 // ===================================
-console.log('%c💪 TreinoTeen+', 'font-size: 20px; font-weight: bold; color: #6C63FF;');
+console.log('%c💪 EvolveFit', 'font-size: 20px; font-weight: bold; color: #6C63FF;');
 console.log('%cSeu treino. Sua motivação. Sua evolução.', 'font-size: 14px; color: #4ECDC4;');
 
 // ===================================
