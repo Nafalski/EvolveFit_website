@@ -1,26 +1,15 @@
-# **EVOLVEFIT — WEBSITE OFICIAL**
+# EVOLVEFIT — WEBSITE OFICIAL
 
-
-
-##### Este repositório contém o site oficial do EvolveFit.
-
+Este repositório contém o site oficial do EvolveFit.
 O site foi criado para apresentar o aplicativo, explicar suas funcionalidades e direcionar os usuários para a plataforma.
 
----
-
-##### O website funciona como a porta de entrada do EvolveFit, oferecendo uma visão clara do produto, seus diferenciais e seus planos.
-
-
+O website funciona como a porta de entrada do EvolveFit, oferecendo uma visão clara do produto, seus diferenciais e seus planos.
 
 ---
 
+## OBJETIVO DO SITE
 
-
-##### **OBJETIVO DO SITE**
-
-
-
-###### O site do EvolveFit tem como objetivos:
+O site do EvolveFit tem como objetivos:
 
 * Apresentar o conceito do aplicativo EvolveFit
 * Explicar como a Inteligência Artificial é usada no treino e na alimentação
@@ -29,13 +18,11 @@ O site foi criado para apresentar o aplicativo, explicar suas funcionalidades e 
 * Direcionar o usuário para acessar o aplicativo (PWA)
 * Conectar com as redes sociais oficiais
 
+---
 
+## ESTRUTURA DO SITE
 
-##### **ESTRUTURA DO SITE**
-
-
-
-###### O site é organizado nas seguintes seções:
+O site é organizado nas seguintes seções:
 
 * Seção inicial (Hero) com apresentação e chamada para ação
 * Como funciona: questionário e criação automática do plano
@@ -45,13 +32,11 @@ O site foi criado para apresentar o aplicativo, explicar suas funcionalidades e 
 * Links para redes sociais
 * Rodapé com informações gerais
 
+---
 
+## IDENTIDADE VISUAL
 
-##### **IDENTIDADE VISUAL**
-
-
-
-###### Cores utilizadas no projeto:
+Cores utilizadas no projeto:
 
 * Azul: tecnologia e confiança
 * Vermelho: energia e ação
@@ -60,9 +45,9 @@ O site foi criado para apresentar o aplicativo, explicar suas funcionalidades e 
 
 O design é moderno, limpo e responsivo, com foco em clareza e boa experiência do usuário.
 
+---
 
-
-##### **TECNOLOGIAS UTILIZADAS**
+## TECNOLOGIAS UTILIZADAS
 
 * HTML5
 * CSS3
@@ -71,41 +56,29 @@ O design é moderno, limpo e responsivo, com foco em clareza e boa experiência 
 
 A stack poderá evoluir conforme o projeto avançar.
 
+---
 
-
-##### **STATUS DO PROJETO**
-
-
+## STATUS DO PROJETO
 
 Projeto em desenvolvimento.
 
-
-
 O site faz parte de um projeto prático de estudo e portfólio, focado em desenvolvimento web e produto digital.
 
+---
 
-
-##### **RELAÇÃO COM O APLICATIVO**
-
-
+## RELAÇÃO COM O APLICATIVO
 
 Este site está diretamente ligado ao projeto EVOLVEFIT APP, que contém o desenvolvimento do aplicativo, a Inteligência Artificial, os planos de treino, alimentação, motivação diária e gamificação.
 
+---
 
+## AUTOR
 
-##### **AUTOR**
+Marco Nafalski
 
+---
 
-
-Marco Nafalski Yamin
-
-
-
-##### **LICENÇA**
-
-
+## LICENÇA
 
 Projeto de uso educacional e experimental.
-
 Todos os direitos reservados.
-
