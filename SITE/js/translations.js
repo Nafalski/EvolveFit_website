@@ -140,7 +140,10 @@ const textos = {
         
         // Página Privacidade (privacidade.html)
         'page-title-privacidade': 'Política de Privacidade',
-        'page-subtitle-privacidade': 'Protegendo seus dados e sua privacidade'
+        'page-subtitle-privacidade': 'Protegendo seus dados e sua privacidade',
+
+        // Onboarding
+        'open-onboarding-again': 'Recomeçar'
     },
     
     en: {
@@ -279,7 +282,10 @@ const textos = {
         
         // Privacy Page (privacidade.html)
         'page-title-privacidade': 'Privacy Policy',
-        'page-subtitle-privacidade': 'Protecting your data and privacy'
+        'page-subtitle-privacidade': 'Protecting your data and privacy',
+
+        // Onboarding
+        'open-onboarding-again': 'Restart'
     }
 };
 

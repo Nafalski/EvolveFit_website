@@ -19,8 +19,49 @@
 </head>
 
 <body>
+    <!-- Initial Onboarding Overlay -->
+<div id="onboarding-overlay" class="onboarding-overlay" aria-hidden="true">
+  <div class="onboarding-backdrop"></div>
+
+  <section class="onboarding-modal" role="dialog" aria-modal="true" aria-labelledby="onboarding-title">
+
+    <div class="onboarding-header">
+      <div class="onboarding-brand">
+        <img src="imagem/logo.png" alt="EvolveFit" class="onboarding-brand-logo">
+        <span class="onboarding-brand-name">EvolveFit</span>
+      </div>
+
+      <div class="onboarding-progress">
+        <span id="onboarding-step-label">Etapa 1 de 4</span>
+        <div class="onboarding-progress-bar">
+          <div id="onboarding-progress-fill" class="onboarding-progress-fill"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="onboarding-body">
+      <div class="onboarding-copy">
+        <p class="onboarding-kicker" id="onboarding-kicker">Bem-vindo</p>
+        <h2 id="onboarding-title">Vamos personalizar sua entrada</h2>
+        <p id="onboarding-subtitle" class="onboarding-subtitle">
+          Responda 4 perguntas rápidas antes de receber o acesso ao EvolveFit.
+        </p>
+      </div>
+
+      <div id="onboarding-step-content" class="onboarding-step-content"></div>
+    </div>
+
+    <div class="onboarding-footer">
+      <button type="button" id="onboarding-back" class="btn btn-secondary" hidden>Voltar</button>
+      <button type="button" id="onboarding-next" class="btn btn-primary">Continuar</button>
+    </div>
+  </section>
+</div>
     <!-- Navigation -->
     <nav class="navbar">
+        <button id="debug-reset-onboarding">
+            RESET ONBOARDING (TESTE)
+          </button>
         <div class="container">
             <!-- Logo e nome -->
             <div class="nav-left">
@@ -184,5 +225,6 @@
     <script src="js/translations.js"></script>
     <script src="js/language.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/onboarding.js"></script>
 </body>
 </html>
