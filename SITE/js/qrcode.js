@@ -8,8 +8,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const downloadLinkElement = document.getElementById('download-link');
     
     if (qrcodeContainer) {
-           // URL para download
-           const fullDownloadUrl = window.location.origin + '/download';
+        // URL para download (pode ser alterada depois)
+        const downloadUrl = window.location.href + '#download';
+        const fullDownloadUrl = window.location.origin + '/download';
         
         // Atualiza o link exibido
         if (downloadLinkElement) {
