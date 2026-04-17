@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
             step: 'Etapa {current} de 3',
             back: 'Voltar',
             next: 'Continuar',
-            finish: 'Entrar no EvolveFit',
+            finish: 'Acessar site completo',
             lockedWarning: 'Pense com calma antes de responder. Depois de concluir, isso não poderá ser trocado.',
 
             languageQuestion: 'Escolha o idioma',
@@ -270,9 +270,11 @@ document.addEventListener('DOMContentLoaded', function () {
             }
     
             if (isFinalStep) {
-                stepLabel.style.display = 'none';
+                stepLabel.style.display = 'block'; // garante que aparece
+                stepLabel.textContent = getLang() === 'pt' ? 'Feito!' : 'Done!';
                 progressPercent = 100;
             } else {
+                stepLabel.style.display = 'block'; // garante que aparece nas outras etapas também
                 stepLabel.textContent = getLang() === 'pt'
                     ? `Etapa ${currentStepNumber} de 3`
                     : `Step ${currentStepNumber} of 3`;
