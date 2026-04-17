@@ -959,55 +959,108 @@ body { /* base de tipografia e plano de fundo inicial */
 /* ===================================
    Responsividade (Mobile-First)
    =================================== */
-@media (max-width: 768px) {
+   @media (max-width: 768px) {
+    /* Base */
+    .container {
+        padding: 0 16px;
+    }
+
     /* Navegação Mobile */
+    .navbar {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .navbar .container {
+        position: relative;
+    }
+
     .mobile-menu-toggle {
-        display: flex; /* mostra botão hamburguer */
+        display: flex;
+        position: relative;
+        z-index: 1102; /* fica acima do menu */
     }
     
     .nav-menu {
-        position: fixed; /* menu móvel sobrepõe conteúdo */
-        top: 60px; /* abaixo da navbar */
-        left: -100%; /* escondido inicialmente */
-        width: 100%;
-        background: var(--surface); /* fundo segue o tema */
-        flex-direction: column; /* itens empilhados */
-        padding: var(--spacing-lg);
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 60%;
+        max-width: 320px;
+        height: 100vh;
+        background: var(--surface);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 14px;
+        padding: 90px 20px 24px;
         box-shadow: var(--shadow-lg);
-        transition: left 0.3s ease; /* animação de slide */
+        transition: left 0.3s ease;
+        z-index: 1101; /* abaixo do botão, acima do conteúdo */
+        overflow-y: auto;
     }
     
     .nav-menu.active {
-        left: 0; /* revela menu */
+        left: 0;
+    }
+
+    .nav-menu li {
+        width: 100%;
+    }
+
+    .nav-menu a {
+        width: 100%;
+    }
+    
+    .nav-menu .theme-btn {
+        width: 48px;
+        height: 48px;
+        min-width: 48px;
+        border-radius: 50%;
+        align-self: flex-start;
     }
     
     .language-selector-wrapper {
-        margin-left: 0; /* reseta alinhamento */
+        margin-left: 0;
         margin-top: var(--spacing-sm);
-        width: 100%; /* ocupa largura */
+        width: 100%;
     }
     
     .language-select {
         width: 100%;
-        max-width: 200px;
+        max-width: 100%;
     }
     
     /* Hero */
     .hero-content {
-        grid-template-columns: 1fr; /* empilha colunas */
-        text-align: center; /* centraliza textos */
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 28px;
     }
     
     .hero-title {
-        font-size: 2.5rem; /* menor para telas menores */
+        font-size: 2.2rem;
+        line-height: 1.15;
     }
     
     .hero-slogan {
-        font-size: 1.2rem;
+        font-size: 1.05rem;
+    }
+
+    .hero-description {
+        font-size: 0.98rem;
+        line-height: 1.7;
     }
     
     .hero-buttons {
-        justify-content: center; /* centraliza CTAs */
+        justify-content: center;
+    }
+
+    .hero-illustration {
+        max-width: 320px;
+        height: 320px;
+        margin: 0 auto;
     }
     
     /* Cards e Grids */
@@ -1015,30 +1068,41 @@ body { /* base de tipografia e plano de fundo inicial */
     .benefits-grid,
     .download-content,
     .installation-steps {
-        grid-template-columns: 1fr; /* empilha */
+        grid-template-columns: 1fr;
     }
     
     /* Páginas Internas */
     .about-section,
     .feature-main {
-        grid-template-columns: 1fr; /* empilha */
+        grid-template-columns: 1fr;
     }
     
     .feature-main.reverse {
-        direction: ltr; /* evita inversão no mobile */
+        direction: ltr;
+    }
+
+    .feature-card,
+    .benefit-card,
+    .download-card,
+    .motivation-card,
+    .about-text,
+    .feature-main-content {
+        padding: 20px;
     }
     
     .page-title {
-        font-size: 2rem; /* título menor */
+        font-size: 2rem;
+        line-height: 1.15;
     }
     
     .section-title {
-        font-size: 2rem;
+        font-size: 1.9rem;
+        line-height: 1.2;
     }
     
     /* Motivação */
     .motivation-card {
-        flex-direction: column; /* empilha conteúdo do card */
+        flex-direction: column;
         text-align: center;
     }
     
@@ -1049,7 +1113,7 @@ body { /* base de tipografia e plano de fundo inicial */
     }
     
     .social-links {
-        align-items: center; /* centraliza ícones */
+        align-items: center;
     }
     
     /* Download */
@@ -1065,29 +1129,57 @@ body { /* base de tipografia e plano de fundo inicial */
 }
 
 @media (max-width: 480px) {
+    .container {
+        padding: 0 14px;
+    }
+
     .hero-title {
-        font-size: 2rem; /* título ainda menor */
+        font-size: 1.9rem;
     }
     
     .hero-slogan {
-        font-size: 1rem; /* subtítulo menor */
+        font-size: 0.98rem;
+    }
+
+    .hero-description {
+        font-size: 0.95rem;
     }
     
     .btn {
-        width: 100%; /* CTAs full-width no mobile pequeno */
+        width: 100%;
     }
     
     .hero-buttons {
-        flex-direction: column; /* CTAs empilhados */
+        flex-direction: column;
+    }
+
+    .hero-illustration {
+        max-width: 260px;
+        height: 260px;
     }
     
     .motivation-text {
-        font-size: 1.1rem; /* legibilidade */
+        font-size: 1.05rem;
     }
     
     .emoji-large,
     .emoji-feature {
-        font-size: 5rem; /* reduz emojis grandes */
+        font-size: 4.2rem;
+    }
+
+    .feature-card,
+    .benefit-card,
+    .download-card,
+    .motivation-card {
+        padding: 16px;
+    }
+
+    .page-title {
+        font-size: 1.7rem;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
     }
 }
 
