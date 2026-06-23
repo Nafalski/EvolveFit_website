@@ -73,6 +73,10 @@ Verifique: menu mobile, tema claro/escuro, troca PT/EN, botões e QR apontando p
 - **PT/EN** via `translations.js` (cada texto tem um `id`). O seletor no menu troca o idioma e salva a preferência.
 - **Tema claro/escuro** com escuro como padrão; a preferência é salva em `localStorage`.
 
+## Identidade visual
+
+Paleta **Onyx + Candy Blue** (fitness-tech premium): fundo Onyx (`#020202`), superfícies em carvão, texto branco gelo e **Candy Blue** (`#B2D5E5`) como destaque/ação. Tokens centralizados em `:root` (e `:root.light`) no `css/style.css`. Tipografia: **Sora** (títulos) + **Manrope** (corpo).
+
 ---
 
 ## Status
