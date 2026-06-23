@@ -3,194 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Política de Privacidade - EvolveFit</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="imagem/logo.png">
+    <title>Política de Privacidade — EvolveFit</title>
+    <meta name="description" content="Como o EvolveFit trata os seus dados: o que coletamos, como usamos e quais são os seus direitos.">
+    <link rel="icon" type="image/png" href="imagem/logo.png">
+    <link rel="apple-touch-icon" href="imagem/apple-touch-icon.png">
+    <meta name="theme-color" content="#070B12">
+    <script>try{if(localStorage.getItem('evolvefit-theme')==='light')document.documentElement.classList.add('light');}catch(e){}</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <!-- Logo e nome -->
-            <div class="nav-left">
-                <a href="index.html" class="nav-logo">
-                    <img src="imagem/logo.png" alt="Logo EvolveFit" class="logo-img">
-                </a>
-                <h1 class="logo">EvolveFit</h1>
-            </div>
 
-            <!-- Botão do menu mobile -->
-            <button class="mobile-menu-toggle" aria-label="Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
-            <!-- Menu -->
-            <ul class="nav-menu">
-                <!-- Botão Modo Claro/Escuro -->
-                <li>
-                    <button id="theme-toggle" class="theme-btn" aria-label="Alternar tema">
-                        <span class="icon-sun">☀️</span>
-                        <span class="icon-moon">🌙</span>
+    <header class="nav">
+        <div class="container nav__inner">
+            <a class="nav__brand" href="index.html"><img src="imagem/logo.png" alt="EvolveFit" class="nav__logo"><span>EvolveFit</span></a>
+            <button class="nav__toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-menu"><span></span><span></span><span></span></button>
+            <nav class="nav__menu" id="nav-menu">
+                <a href="index.html" id="nav-inicio">Início</a>
+                <a href="recursos.html" id="nav-recursos">Recursos</a>
+                <a href="sobre.html" id="nav-sobre">Sobre</a>
+                <a href="download.html" id="nav-download">Acessar app</a>
+                <div class="nav__actions">
+                    <button id="theme-toggle" class="icon-btn" aria-label="Alternar tema">
+                        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+                        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
                     </button>
-                </li>
+                    <select id="language-select" class="lang-select" aria-label="Idioma"><option value="pt">PT</option><option value="en">EN</option></select>
+                    <a class="btn btn--primary btn--sm" id="nav-cta" href="#" data-app-link>Abrir app</a>
+                </div>
+            </nav>
+        </div>
+    </header>
 
-                <li><a href="index.html" id="nav-inicio">Início</a></li>
-                <li><a href="sobre.html" id="nav-sobre">Sobre</a></li>
-                <li><a href="recursos.html" id="nav-recursos">Recursos</a></li>
-                <li><a href="download.html" id="nav-download">Download</a></li>
-                <li class="language-selector-wrapper">
-                    <select id="language-select" class="language-select" aria-label="Selecionar idioma">
-                        <option value="pt">🇧🇷 PT</option>
-                        <option value="en">🇺🇸 EN</option>
-                    </select>
-                </li>
+    <section class="page-hero">
+        <div class="container">
+            <h1 id="page-title-privacidade">Política de Privacidade</h1>
+            <p id="page-sub-privacidade">Como tratamos os seus dados.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container prose">
+            <p style="color:var(--muted);font-size:0.9rem;margin-bottom:30px" id="privacy-updated">Última atualização: junho de 2026</p>
+
+            <h2 id="privacy-s1-title">1. Introdução</h2>
+            <p id="privacy-s1-p">O EvolveFit leva a sério a privacidade dos seus usuários. Esta política explica, de forma direta, quais dados o app coleta, como eles são usados e quais são os seus direitos.</p>
+
+            <h2 id="privacy-s2-title">2. Dados que coletamos</h2>
+            <p id="privacy-s2-p">Para funcionar, o app pode coletar:</p>
+            <ul class="bullets">
+                <li id="privacy-s2-li1">Conta: nome e e-mail usados no cadastro.</li>
+                <li id="privacy-s2-li2">Treino: planos, exercícios, cargas, repetições e histórico.</li>
+                <li id="privacy-s2-li3">Preferências: objetivo, nível e rotina informados no onboarding.</li>
+                <li id="privacy-s2-li4">Uso: dados técnicos anônimos para melhorar o app.</li>
             </ul>
-        </div>
-    </nav>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1 class="page-title" id="page-title-privacidade">Política de Privacidade</h1>
-            <p class="page-subtitle" id="page-subtitle-privacidade">Protegendo seus dados e sua privacidade</p>
-        </div>
-    </section>
+            <h2 id="privacy-s3-title">3. Como usamos seus dados</h2>
+            <p id="privacy-s3-p">Usamos seus dados apenas para fazer o app funcionar e melhorar a sua experiência:</p>
+            <ul class="bullets">
+                <li id="privacy-s3-li1">Montar e ajustar seu plano de treino.</li>
+                <li id="privacy-s3-li2">Guardar seu histórico e mostrar seu progresso.</li>
+                <li id="privacy-s3-li3">Manter sua conta segura.</li>
+                <li id="privacy-s3-li4">Entender o uso geral para corrigir e melhorar o produto.</li>
+            </ul>
 
-    <!-- Privacy Content -->
-    <section class="about-content">
-        <div class="container">
-            <div class="privacy-content" style="max-width: 800px; margin: 0 auto;">
-                <div style="margin-bottom: 2rem;">
-                    <p id="privacy-updated"><strong>Última atualização:</strong> Junho de 2026</p>
-                </div>
+            <h2 id="privacy-s4-title">4. Proteção e compartilhamento</h2>
+            <p id="privacy-s4-p">Seus dados são armazenados com medidas de segurança e não são vendidos. Não compartilhamos informações pessoais com terceiros para publicidade.</p>
 
-                <div style="margin-bottom: 2rem;">
-                    <h2 id="privacy-s1-title" style="color: var(--primary-blue); margin-bottom: 1rem;">1. Introdução</h2>
-                    <p id="privacy-s1-p" style="line-height: 1.8; color: var(--gray);">
-                        O EvolveFit está comprometido em proteger a privacidade e os dados pessoais
-                        dos nossos usuários. Esta Política de Privacidade explica como coletamos,
-                        usamos, armazenamos e protegemos suas informações quando você usa nosso aplicativo.
-                    </p>
-                </div>
+            <h2 id="privacy-s5-title">5. Seus direitos</h2>
+            <p id="privacy-s5-p">Você pode, a qualquer momento:</p>
+            <ul class="bullets">
+                <li id="privacy-s5-li1">Acessar seus dados pessoais.</li>
+                <li id="privacy-s5-li2">Corrigir informações incorretas.</li>
+                <li id="privacy-s5-li3">Solicitar a exclusão da sua conta e dos seus dados.</li>
+                <li id="privacy-s5-li4">Retirar consentimentos quando quiser.</li>
+            </ul>
 
-                <div style="margin-bottom: 2rem;">
-                    <h2 id="privacy-s2-title" style="color: var(--primary-blue); margin-bottom: 1rem;">2. Informações que Coletamos</h2>
-                    <p id="privacy-s2-p" style="line-height: 1.8; color: var(--gray); margin-bottom: 1rem;">
-                        Podemos coletar as seguintes informações:
-                    </p>
-                    <ul style="line-height: 1.8; color: var(--gray); padding-left: 2rem;">
-                        <li id="privacy-s2-li1">Nome e idade (apenas para personalização do app)</li>
-                        <li id="privacy-s2-li2">Dados de treino e progresso</li>
-                        <li id="privacy-s2-li3">Preferências de exercícios e objetivos</li>
-                        <li id="privacy-s2-li4">Informações de uso do aplicativo (anônimas)</li>
-                    </ul>
-                </div>
+            <h2 id="privacy-s6-title">6. Contato</h2>
+            <p id="privacy-s6-p">Dúvidas sobre privacidade ou sobre seus dados? Fale com a gente:</p>
+            <p><a href="mailto:contato@evolvefit.com">contato@evolvefit.com</a></p>
 
-                <div style="margin-bottom: 2rem;">
-                    <h2 id="privacy-s3-title" style="color: var(--primary-blue); margin-bottom: 1rem;">3. Como Usamos Suas Informações</h2>
-                    <p id="privacy-s3-p" style="line-height: 1.8; color: var(--gray);">
-                        Utilizamos suas informações exclusivamente para:
-                    </p>
-                    <ul style="line-height: 1.8; color: var(--gray); padding-left: 2rem;">
-                        <li id="privacy-s3-li1">Personalizar treinos e recomendações</li>
-                        <li id="privacy-s3-li2">Melhorar a experiência do usuário</li>
-                        <li id="privacy-s3-li3">Enviar notificações motivacionais (quando autorizado)</li>
-                        <li id="privacy-s3-li4">Garantir a segurança do aplicativo</li>
-                    </ul>
-                </div>
-
-                <div style="margin-bottom: 2rem;">
-                    <h2 id="privacy-s4-title" style="color: var(--primary-blue); margin-bottom: 1rem;">4. Proteção dos Dados</h2>
-                    <p id="privacy-s4-p" style="line-height: 1.8; color: var(--gray);">
-                        Implementamos medidas de segurança técnicas e organizacionais para proteger
-                        seus dados contra acesso não autorizado, alteração, divulgação ou destruição.
-                        Seus dados são armazenados de forma segura e nunca compartilhamos informações
-                        pessoais com terceiros sem seu consentimento.
-                    </p>
-                </div>
-
-                <div style="margin-bottom: 2rem;">
-                    <h2 id="privacy-s5-title" style="color: var(--primary-blue); margin-bottom: 1rem;">5. Seus Direitos</h2>
-                    <p id="privacy-s5-p" style="line-height: 1.8; color: var(--gray);">
-                        Você tem o direito de:
-                    </p>
-                    <ul style="line-height: 1.8; color: var(--gray); padding-left: 2rem;">
-                        <li id="privacy-s5-li1">Acessar seus dados pessoais</li>
-                        <li id="privacy-s5-li2">Solicitar a correção de informações incorretas</li>
-                        <li id="privacy-s5-li3">Solicitar a exclusão de seus dados</li>
-                        <li id="privacy-s5-li4">Revogar consentimentos a qualquer momento</li>
-                    </ul>
-                </div>
-
-                <div style="margin-bottom: 2rem;">
-                    <h2 id="privacy-s6-title" style="color: var(--primary-blue); margin-bottom: 1rem;">6. Contato</h2>
-                    <p id="privacy-s6-p" style="line-height: 1.8; color: var(--gray); margin-bottom: 0.5rem;">
-                        Para questões sobre privacidade ou para exercer seus direitos, entre em contato conosco pelo e-mail:
-                    </p>
-                    <p style="line-height: 1.8;">
-                        <a href="mailto:contato@evolvefit.com">contato@evolvefit.com</a>
-                    </p>
-                </div>
-
-                <div style="background: var(--gray-light); padding: 1.5rem; border-radius: var(--border-radius); margin-top: 2rem;">
-                    <p id="privacy-disclaimer" style="color: var(--gray); font-size: 0.9rem; text-align: center;">
-                        Esta política poderá ser atualizada periodicamente. Em caso de dúvidas sobre o
-                        tratamento dos seus dados, entre em contato pelo e-mail acima.
-                    </p>
-                </div>
-            </div>
+            <p class="note-box" id="privacy-disclaimer">Esta política pode ser atualizada conforme o app evolui. Mudanças importantes serão comunicadas dentro do app.</p>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3 class="footer-logo">EvolveFit</h3>
-                    <p id="footer-tagline">Evolução contínua. Disciplina inteligente. Transformação real.</p>
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <div class="footer__logo">EvolveFit</div>
+                    <p id="footer-tagline">Treino com direção, registro simples e evolução que você consegue ver.</p>
+                    <a class="btn btn--primary btn--sm" id="footer-cta" href="#" data-app-link>Abrir app</a>
                 </div>
-                <div class="footer-section">
-                    <h4 id="footer-links">Links Rápidos</h4>
-                    <ul>
-                        <li><a href="index.html" id="footer-link-inicio">Início</a></li>
-                        <li><a href="sobre.html" id="footer-link-sobre">Sobre</a></li>
-                        <li><a href="recursos.html" id="footer-link-recursos">Recursos</a></li>
-                        <li><a href="download.html" id="footer-link-download">Download</a></li>
-                    </ul>
+                <div class="footer__col">
+                    <h4 id="footer-nav">Navegação</h4>
+                    <a href="index.html" id="footer-l-inicio">Início</a>
+                    <a href="recursos.html" id="footer-l-recursos">Recursos</a>
+                    <a href="sobre.html" id="footer-l-sobre">Sobre</a>
                 </div>
-                <div class="footer-section">
-                    <h4 id="footer-social">Redes Sociais</h4>
-                    <div class="social-links">
-                        <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
-                            <span class="social-icon">📷</span> Instagram
-                        </a>
-                        <a href="https://tiktok.com" target="_blank" rel="noopener" aria-label="TikTok">
-                            <span class="social-icon">🎵</span> TikTok
-                        </a>
-                    </div>
+                <div class="footer__col">
+                    <h4 id="footer-product">Produto</h4>
+                    <a href="download.html" id="footer-l-acesso">Acessar app</a>
+                    <a href="recursos.html" id="footer-l-funcoes">Funcionalidades</a>
+                    <a href="#" data-app-link id="footer-l-abrir">Abrir EvolveFit</a>
                 </div>
-                <div class="footer-section">
-                    <h4 id="footer-contact">Contato</h4>
-                    <p><a href="mailto:contato@evolvefit.com">contato@evolvefit.com</a></p>
-                    <p><a href="privacidade.html" id="footer-privacy">Política de Privacidade</a></p>
+                <div class="footer__col">
+                    <h4 id="footer-legal">Legal</h4>
+                    <a href="privacidade.html" id="footer-l-privacidade">Privacidade</a>
+                    <a href="mailto:contato@evolvefit.com">contato@evolvefit.com</a>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 EvolveFit. <span id="footer-rights">Todos os direitos reservados.</span></p>
-            </div>
+            <div class="footer__bottom"><span>© 2026 EvolveFit</span><span id="footer-rights">Treine com direção.</span></div>
         </div>
     </footer>
 
-    <!-- JavaScript -->
+    <script src="js/app-config.js"></script>
     <script src="js/translations.js"></script>
     <script src="js/language.js"></script>
     <script src="js/main.js"></script>
