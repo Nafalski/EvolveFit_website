@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
             nameQuestion: 'Como gostaria de ser chamado?',
             namePlaceholder: 'Digite seu primeiro nome',
 
-            goalQuestion: 'qual é o seu objetivo atual?',
+            goalQuestion: 'Qual é o seu objetivo atual?',
             goalOptions: [
                 { value: 'lose', label: 'Perder peso', description: 'Mais saúde e menos gordura'},
                 { value: 'gain', label: 'Ganhar massa', description: 'Mais força e físico'},
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 { value: 'en', label: 'English 🇺🇸' }
             ],
 
-            nameQuestion: 'what should we call you?',
+            nameQuestion: 'What should we call you?',
             namePlaceholder: 'Enter your first name',
 
             goalQuestion: 'Your goal',
@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function () {
             ],
 
             finalTitle: 'Perfect, {name}.',
-            finalMessageDefault: 'After analyzing your answers, you are in the perfect place. <br> Your profile is ideal to evolve — and we know how to shorten the path to your result.',
+            finalMessageDefault: 'After analysing your answers, you are in the perfect place. <br> Your profile is ideal to evolve — and we know how to shorten the path to your result.',
             errors: {
                 name: 'Enter your first name.',
                 goal: 'Choose a goal.',
@@ -119,6 +119,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function t() {
         return texts[getLang()];
+    }
+
+    // Escapa entrada do usuário antes de inserir via innerHTML (evita XSS pelo nome)
+    function escapeHtml(value) {
+        return String(value).replace(/[&<>"']/g, function (char) {
+            return {
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#39;'
+            }[char];
+        });
     }
 
     function saveData() {
@@ -187,7 +200,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function getFinalMessage() {
         const lang = getLang();
-        const name = data.name || (lang === 'pt' ? 'você' : 'you');
+        const name = escapeHtml(data.name || (lang === 'pt' ? 'você' : 'you'));
 
         if (lang === 'pt') {
             if (data.goal === 'lose' && data.level === 'init') {
@@ -362,7 +375,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function renderFinalStep() {
         content.innerHTML = `
             <div class="onboarding-summary">
-                <p class="onboarding-summary-name">${t().finalTitle.replace('{name}', data.name || 'User')}</p>
+                <p class="onboarding-summary-name">${t().finalTitle.replace('{name}', escapeHtml(data.name || 'User'))}</p>
                 <p class="onboarding-summary-message">${getFinalMessage()}</p>
                 <div class="onboarding-summary-tags">
                     <span class="onboarding-tag">${getGoalText(data.goal)}</span>
@@ -480,16 +493,4 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
         hideOverlay();
     }
-}); 
-
-// BOTÃO DE TESTE (RESET)
-const debugResetBtn = document.getElementById('debug-reset-onboarding');
-
-if (debugResetBtn) {
-    debugResetBtn.addEventListener('click', function () {
-        localStorage.removeItem('evolvefit-onboarding-completed');
-        localStorage.removeItem('evolvefit-onboarding-data');
-
-        location.reload(); // recarrega a página pra aparecer onboarding
-    });
-}
+});

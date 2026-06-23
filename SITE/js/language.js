@@ -47,10 +47,10 @@ function updatePageContent(lang) {
         }
     });
 
-    // Download link usa origem dinâmica (sem domínio hardcoded)
+    // Download link usa URL centralizada do PWA
     const downloadLinkEl = document.getElementById('download-link');
-    if (downloadLinkEl) {
-        downloadLinkEl.textContent = window.location.origin + '/download';
+    if (downloadLinkEl && typeof EVOLVEFIT_APP_DISPLAY !== 'undefined') {
+        downloadLinkEl.textContent = EVOLVEFIT_APP_DISPLAY;
     }
     
     // Atualiza o atributo lang do HTML

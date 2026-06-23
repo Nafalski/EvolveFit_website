@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // ===================================
 // Scroll Suave
 // ===================================
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+document.querySelectorAll('a[href^="#"]:not([data-evolvefit-app]):not(.is-coming-soon)').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
