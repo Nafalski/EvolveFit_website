@@ -373,6 +373,11 @@ ul { list-style: none; }
 .card h3 { font-size: 1.18rem; margin-bottom: 8px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 .card p { color: var(--muted); font-size: 0.95rem; }
 .tag-soon { font-family: var(--font-body); font-size: 0.66rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--brand-2); background: color-mix(in srgb, var(--brand) 14%, transparent); border: 1px solid color-mix(in srgb, var(--brand) 30%, transparent); padding: 3px 8px; border-radius: 999px; }
+/* Cards planejados — ícone discreto + selo de relógio (sem texto, traduz sozinho) */
+.card--soon .card__ico { color: var(--muted); background: color-mix(in srgb, var(--muted) 12%, transparent); border-color: var(--border); }
+.card--soon h3 { color: var(--text); }
+.card__soon { position: absolute; top: 16px; right: 16px; display: inline-flex; color: var(--brand-2); opacity: 0.85; }
+.card__soon svg { width: 16px; height: 16px; }
 
 /* ===================================================================
    Showcase — telas do app
@@ -380,7 +385,7 @@ ul { list-style: none; }
 .showcase { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; align-items: start; }
 .shot { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 14px; transition: transform .3s ease, border-color .3s ease; }
 .shot:hover { transform: translateY(-6px); border-color: var(--border-2); }
-.shot__frame { border-radius: var(--r); overflow: hidden; border: 1px solid var(--border); background: #070b12; }
+.shot__frame { border-radius: var(--r); overflow: hidden; border: 1px solid var(--border); background: #020202; }
 .shot__frame .scr { height: 360px; gap: 11px; padding: 16px 12px 12px; }
 .shot__cap { text-align: center; padding: 14px 6px 4px; }
 .shot__cap b { font-family: var(--font-display); color: var(--text-strong); font-size: 0.98rem; }
@@ -433,6 +438,24 @@ ul { list-style: none; }
 .cta-final h2 { position: relative; font-size: clamp(1.9rem, 5vw, 3rem); }
 .cta-final p { position: relative; color: var(--muted); max-width: 46ch; margin: 16px auto 30px; font-size: 1.08rem; }
 .cta-final .btn { position: relative; }
+
+/* ===================================================================
+   Roadmap / lançamento 1.0
+   =================================================================== */
+.roadmap {
+    position: relative; overflow: hidden; max-width: 920px; margin: 0 auto; text-align: center;
+    background: linear-gradient(150deg, color-mix(in srgb, var(--brand) 13%, var(--surface)), var(--surface) 72%);
+    border: 1px solid color-mix(in srgb, var(--brand) 32%, var(--border));
+    border-radius: var(--r-xl); padding: clamp(34px, 5vw, 56px) clamp(22px, 4vw, 48px);
+}
+.roadmap::before { content: ""; position: absolute; inset: auto auto -55% 50%; transform: translateX(-50%); width: 620px; height: 400px; background: radial-gradient(closest-side, var(--glow), transparent); pointer-events: none; }
+.roadmap > * { position: relative; }
+.roadmap__chip { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-body); font-weight: 800; font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--on-brand); background: var(--brand); padding: 8px 14px; border-radius: 999px; margin-bottom: 16px; }
+.roadmap .eyebrow { display: block; width: max-content; margin-inline: auto; }
+.roadmap h2 { font-size: clamp(1.7rem, 4vw, 2.5rem); }
+.roadmap__date { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.2rem, 3vw, 1.7rem); color: var(--brand-2); letter-spacing: -0.02em; margin: 16px auto 14px; max-width: 22ch; }
+.roadmap__desc { color: var(--muted); max-width: 54ch; margin: 0 auto 20px; font-size: 1.04rem; line-height: 1.7; }
+.roadmap__note { display: block; color: var(--muted); font-size: 0.86rem; line-height: 1.6; max-width: 60ch; margin: 0 auto; padding: 14px 18px; background: color-mix(in srgb, var(--text-strong) 4%, transparent); border: 1px solid var(--border); border-radius: var(--r); }
 
 /* ===================================================================
    Footer
