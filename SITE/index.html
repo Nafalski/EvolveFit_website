@@ -3,228 +3,460 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EvolveFit - Transforme seus hábitos. Eleve seu potencial. Evolua todos os dias.</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="imagem/logo.png">
+    <title>EvolveFit — Treine com direção. Evolua com consistência.</title>
+    <meta name="description" content="EvolveFit é um app de treino que ajuda você a treinar com mais direção: crie seu plano, registre cargas e repetições e acompanhe sua evolução. Funciona no navegador e no celular (PWA).">
+    <link rel="icon" type="image/png" href="imagem/logo.png">
     <link rel="apple-touch-icon" href="imagem/apple-touch-icon.png">
-    <meta name="theme-color" content="#0B1D3A">
-    <meta name="description" content="EvolveFit - Treino, nutrição e motivação personalizados para a sua jornada de evolução. Para qualquer pessoa que queira evoluir.">
-    
-    <!-- Google Fonts -->
+    <meta name="theme-color" content="#070B12">
+
+    <!-- aplica tema salvo antes da pintura (evita flash) -->
+    <script>try{if(localStorage.getItem('evolvefit-theme')==='light')document.documentElement.classList.add('light');}catch(e){}</script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-    <!-- Initial Onboarding Overlay -->
-<div id="onboarding-overlay" class="onboarding-overlay" aria-hidden="true">
-  <div class="onboarding-backdrop"></div>
 
-  <section class="onboarding-modal" role="dialog" aria-modal="true" aria-labelledby="onboarding-title">
-
-    <div class="onboarding-header">
-      <div class="onboarding-brand">
-        <img src="imagem/logo.png" alt="EvolveFit" class="onboarding-brand-logo">
-        <span class="onboarding-brand-name">EvolveFit</span>
-      </div>
-
-      <div class="onboarding-progress">
-        <span id="onboarding-step-label">Etapa 1 de 3</span>
-        <div class="onboarding-progress-bar">
-          <div id="onboarding-progress-fill" class="onboarding-progress-fill"></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="onboarding-body">
-      <div class="onboarding-copy">
-        <p class="onboarding-kicker" id="onboarding-kicker">Bem-vindo</p>
-        <h2 id="onboarding-title">Vamos personalizar sua entrada</h2>
-        <p id="onboarding-subtitle" class="onboarding-subtitle">
-          Responda 3 perguntas rápidas antes de receber o acesso ao EvolveFit.
-        </p>
-      </div>
-
-      <div id="onboarding-step-content" class="onboarding-step-content"></div>
-    </div>
-
-    <div class="onboarding-footer">
-      <button type="button" id="onboarding-back" class="btn btn-secondary" hidden>Voltar</button>
-      <button type="button" id="onboarding-next" class="btn btn-primary">Continuar</button>
-    </div>
-  </section>
-</div>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <button id="debug-reset-onboarding">
-            RESET ONBOARDING (TESTE)
-          </button>
-        <div class="container">
-            <!-- Logo e nome -->
-            <div class="nav-left">
-                <a href="index.html" class="nav-logo">
-                    <img src="imagem/logo.png" alt="Logo EvolveFit" class="logo-img">
-                </a>
-                <h1 class="logo">EvolveFit</h1>
-            </div>
-
-            <!-- Botão do menu mobile -->
-            <button class="mobile-menu-toggle" aria-label="Menu">
-                <span></span>
-                <span></span>
-                <span></span>
+    <!-- ============================ NAV ============================ -->
+    <header class="nav">
+        <div class="container nav__inner">
+            <a class="nav__brand" href="index.html">
+                <img src="imagem/logo.png" alt="EvolveFit" class="nav__logo">
+                <span>EvolveFit</span>
+            </a>
+            <button class="nav__toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-menu">
+                <span></span><span></span><span></span>
             </button>
-
-            <!-- Menu -->
-            <ul class="nav-menu">
-  <!-- Botão Modo Claro/Escuro -->
-  <li>
-    <button id="theme-toggle" class="theme-btn" aria-label="Alternar tema">
-      <span class="icon-sun">☀️</span>
-      <span class="icon-moon">🌙</span>
-    </button>
-  </li>
-                <li><a href="index.html" class="active" id="nav-inicio">Início</a></li>
-                <li><a href="sobre.html" id="nav-sobre">Sobre</a></li>
-                <li><a href="recursos.html" id="nav-recursos">Recursos</a></li>
-                <li><a href="download.html" id="nav-download">Download</a></li>
-                <li class="language-selector-wrapper">
-                    <select id="language-select" class="language-select" aria-label="Selecionar idioma">
-                        <option value="pt">🇧🇷 PT</option>
-                        <option value="en">🇺🇸 EN</option>
+            <nav class="nav__menu" id="nav-menu">
+                <a href="index.html" class="active" id="nav-inicio">Início</a>
+                <a href="recursos.html" id="nav-recursos">Recursos</a>
+                <a href="sobre.html" id="nav-sobre">Sobre</a>
+                <a href="download.html" id="nav-download">Acessar app</a>
+                <div class="nav__actions">
+                    <button id="theme-toggle" class="icon-btn" aria-label="Alternar tema">
+                        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+                        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+                    </button>
+                    <select id="language-select" class="lang-select" aria-label="Idioma">
+                        <option value="pt">PT</option>
+                        <option value="en">EN</option>
                     </select>
-                </li>
-            </ul>
+                    <a class="btn btn--primary btn--sm" id="nav-cta" href="#" data-app-link>Abrir app</a>
+                </div>
+            </nav>
         </div>
-    </nav>
+    </header>
 
-    <!-- Hero Section -->
+    <!-- ============================ HERO ============================ -->
     <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h2 class="hero-title">
-                        EvolveFit
-                    </h2>
-                    <p class="hero-slogan" id="hero-slogan">Transforme seus hábitos. Eleve seu potencial. Evolua todos os dias.</p>
-                    <p class="hero-description" id="hero-description">
-                        Treino, nutrição e motivação personalizados para a sua jornada de evolução.
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="recursos.html" class="btn btn-primary" id="btn-conheca">Conheça o app</a>
-                        <a href="download.html" class="btn btn-secondary" id="btn-baixar">Baixar agora</a>
+        <div class="container hero__grid">
+            <div class="hero__copy" data-reveal>
+                <span class="eyebrow" id="hero-eyebrow">App de treino · Web e celular</span>
+                <h1 class="hero__title text-grad" id="hero-title">Treine com direção. Evolua com consistência.</h1>
+                <p class="hero__sub" id="hero-sub">Crie seu plano, registre seus treinos e acompanhe sua evolução em um app feito para transformar treino em rotina.</p>
+                <div class="hero__cta">
+                    <a class="btn btn--primary btn--lg" id="hero-cta-start" href="#" data-app-link>
+                        Começar agora
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </a>
+                    <a class="btn btn--ghost btn--lg" id="hero-cta-open" href="#" data-app-link>Abrir app</a>
+                </div>
+                <p class="hero__note">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                    <span id="hero-note-1">Grátis para começar</span>
+                    <span class="hero__dot"></span>
+                    <span id="hero-note-2">Sem instalar nada</span>
+                </p>
+            </div>
+
+            <!-- Mockup: Dashboard -->
+            <div class="hero__visual" data-reveal>
+                <div class="floacard floacard--a">
+                    <div class="floacard__ico">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5 17.5 17.5M3 9l3-3 3 3M15 18l3 3 3-3M9 3 6 6 3 3M21 15l-3 3-3-3"/></svg>
+                    </div>
+                    <div>
+                        <b id="floa-a-t">Plano pronto</b>
+                        <span id="floa-a-s">montado para você</span>
                     </div>
                 </div>
-                <div class="hero-image">
-                    <div class="hero-illustration">
-                        <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Ilustração: pessoa em evolução -->
-                            <circle cx="200" cy="100" r="60" fill="#6C63FF"/>
-                            <rect x="170" y="160" width="60" height="120" rx="30" fill="#4ECDC4"/>
-                            <rect x="140" y="200" width="30" height="80" rx="15" fill="#FFE66D"/>
-                            <rect x="230" y="200" width="30" height="80" rx="15" fill="#FFE66D"/>
-                            <rect x="150" y="280" width="40" height="60" rx="20" fill="#FF6B6B"/>
-                            <rect x="210" y="280" width="40" height="60" rx="20" fill="#FF6B6B"/>
-                        </svg>
+
+                <div class="device">
+                    <div class="device__screen">
+                        <div class="scr">
+                            <div class="scr__top">
+                                <div class="scr__hi"><span id="m-greet">Olá, Marco</span><small id="m-sub">vamos treinar</small></div>
+                                <div class="scr__avatar">M</div>
+                            </div>
+
+                            <div class="scard scard--accent">
+                                <div class="scard__label" id="m-today-label">Treino de hoje</div>
+                                <div class="scard__title" id="m-today-title">Peito &amp; Tríceps</div>
+                                <div class="scard__meta" id="m-today-meta">6 exercícios · 45 min</div>
+                                <div class="scard__btn" id="m-today-btn">Iniciar treino</div>
+                            </div>
+
+                            <div>
+                                <div class="scr__stat" style="margin-bottom:8px">
+                                    <span id="m-week">Esta semana</span>
+                                    <span class="scr__pill">4/5</span>
+                                </div>
+                                <div class="scr__days">
+                                    <div class="scr__day done"><b></b></div>
+                                    <div class="scr__day done"><b></b></div>
+                                    <div class="scr__day done"><b></b></div>
+                                    <div class="scr__day today"><b></b></div>
+                                    <div class="scr__day done"><b></b></div>
+                                    <div class="scr__day"><b></b></div>
+                                    <div class="scr__day"><b></b></div>
+                                </div>
+                            </div>
+
+                            <div class="scard">
+                                <div class="scr__stat">
+                                    <div>
+                                        <div class="scr__rl"><b id="m-vol-label">Volume semanal</b><span id="m-vol-sub">vs. semana passada</span></div>
+                                    </div>
+                                    <span class="scr__pill">+12%</span>
+                                </div>
+                                <div class="scr__bars">
+                                    <span style="height:38%"></span><span style="height:55%"></span><span style="height:46%"></span>
+                                    <span style="height:70%"></span><span style="height:62%"></span><span style="height:88%"></span><span style="height:74%"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="floacard floacard--b">
+                    <div class="floacard__ico">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg>
+                    </div>
+                    <div>
+                        <b id="floa-b-t">+12% volume</b>
+                        <span id="floa-b-s">nesta semana</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Frase Motivacional do Dia -->
-    <section class="daily-motivation">
+    <!-- ========================== PROBLEMA ========================== -->
+    <section class="section section--alt">
         <div class="container">
-            <div class="motivation-card">
-                <div class="motivation-icon">💪</div>
-                <div class="motivation-content">
-                    <h3 id="motivation-title">Frase do Dia</h3>
-                    <p id="daily-phrase" class="motivation-text" data-i18n="motivation-loading">Gerando motivação...</p>
+            <div class="section__head" data-reveal>
+                <span class="eyebrow" id="prob-eyebrow">O problema</span>
+                <h2 class="section__title" id="prob-title">Seu treino não precisa ser improvisado.</h2>
+                <p class="section__sub" id="prob-sub">A maior parte das pessoas trava no mesmo lugar: muita vontade, pouca organização.</p>
+            </div>
+            <div class="prob__grid">
+                <div class="prob__item" data-reveal>
+                    <span class="prob__x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span>
+                    <p id="prob-1">Chegar na academia sem saber o que treinar.</p>
                 </div>
-                <button id="refresh-phrase" class="btn-refresh" aria-label="Atualizar frase">🔄</button>
+                <div class="prob__item" data-reveal>
+                    <span class="prob__x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span>
+                    <p id="prob-2">Esquecer a carga e as repetições da última vez.</p>
+                </div>
+                <div class="prob__item" data-reveal>
+                    <span class="prob__x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span>
+                    <p id="prob-3">Depender de anotações soltas no bloco de notas.</p>
+                </div>
+                <div class="prob__item" data-reveal>
+                    <span class="prob__x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span>
+                    <p id="prob-4">Não ter ideia se está evoluindo de verdade.</p>
+                </div>
+                <div class="prob__item" data-reveal>
+                    <span class="prob__x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span>
+                    <p id="prob-5">Improvisar a semana e perder o ritmo.</p>
+                </div>
+                <div class="prob__item" data-reveal>
+                    <span class="prob__x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span>
+                    <p id="prob-6">Começar animado e parar por falta de rotina.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Preview -->
-    <section class="features-preview">
-        <div class="container">
-            <h2 class="section-title" id="section-title-features">Por que escolher o EvolveFit?</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🏋️</div>
-                    <h3 id="feature-1-title">Treinos Personalizados</h3>
-                    <p id="feature-1-desc">Treinos adaptados ao seu nível e objetivos. Evolua no seu ritmo, com consistência e inteligência.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🎮</div>
-                    <h3 id="feature-2-title">Gamificação</h3>
-                    <p id="feature-2-desc">Ganhe pontos, complete desafios e evolua enquanto se exercita!</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">💬</div>
-                    <h3 id="feature-3-title">Motivação Diária</h3>
-                    <p id="feature-3-desc">Receba frases motivacionais todos os dias para manter o foco e a determinação.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🥗</div>
-                    <h3 id="feature-4-title">Dicas de Alimentação</h3>
-                    <p id="feature-4-desc">Aprenda sobre nutrição saudável de forma simples e divertida.</p>
-                </div>
+    <!-- ========================== SOLUÇÃO ========================== -->
+    <section class="section">
+        <div class="container split">
+            <div data-reveal>
+                <span class="eyebrow" id="sol-eyebrow">A solução</span>
+                <h2 class="section__title" id="sol-title">Tudo o que costuma ficar espalhado, em um lugar só.</h2>
+                <p class="section__sub" id="sol-sub">O EvolveFit junta plano, registro, histórico e progresso. Você abre o app e sabe exatamente o que fazer hoje.</p>
+                <ul class="feat-list">
+                    <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><b id="sol-i1-b">Plano organizado por dias.</b> <span id="sol-i1-s">Sua semana montada, sem decidir na hora.</span></span></li>
+                    <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><b id="sol-i2-b">Registro de carga e repetições.</b> <span id="sol-i2-s">O histórico fica salvo, treino após treino.</span></span></li>
+                    <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><b id="sol-i3-b">Progresso visível.</b> <span id="sol-i3-s">Veja o que mudou de uma semana para a outra.</span></span></li>
+                    <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><b id="sol-i4-b">Biblioteca de exercícios.</b> <span id="sol-i4-s">Saiba como executar cada movimento.</span></span></li>
+                </ul>
             </div>
-            <div class="features-cta">
-                <a href="recursos.html" class="btn btn-primary" id="btn-ver-recursos">Ver todos os recursos</a>
+
+            <!-- Mockup: tela de treino em andamento -->
+            <div class="split__media" data-reveal>
+                <div class="device" style="margin:0 auto">
+                    <div class="device__screen">
+                        <div class="scr">
+                            <div class="scr__top">
+                                <div class="scr__hi"><span id="w-title">Peito &amp; Tríceps</span><small id="w-status">em andamento · 3 de 6</small></div>
+                                <span class="scr__chip"><i></i><span id="w-time">28:14</span></span>
+                            </div>
+
+                            <div class="scard">
+                                <div class="scr__row">
+                                    <span class="scr__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5 17.5 17.5M2 12l2-2 2 2-2 2zM18 12l2-2 2 2-2 2z"/></svg></span>
+                                    <div class="scr__rl"><b id="w-ex1">Supino reto</b><span>4 × 8 · 40 kg</span></div>
+                                    <span class="scr__check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+                                </div>
+                                <div class="scr__row">
+                                    <span class="scr__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5 17.5 17.5M2 12l2-2 2 2-2 2zM18 12l2-2 2 2-2 2z"/></svg></span>
+                                    <div class="scr__rl"><b id="w-ex2">Crucifixo</b><span>3 × 12 · 14 kg</span></div>
+                                    <span class="scr__check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+                                </div>
+                                <div class="scr__row">
+                                    <span class="scr__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5 17.5 17.5M2 12l2-2 2 2-2 2zM18 12l2-2 2 2-2 2z"/></svg></span>
+                                    <div class="scr__rl"><b id="w-ex3">Tríceps na corda</b><span id="w-ex3-set">próximo · 3 × 12</span></div>
+                                </div>
+                            </div>
+
+                            <div class="scard scard--accent" style="margin-top:auto">
+                                <div class="scr__stat">
+                                    <div class="scr__rl"><b style="color:#fff" id="w-reg">Registrar série</b><span style="color:#cdd9ee" id="w-reg-sub">peso e repetições</span></div>
+                                    <span class="scard__btn" style="width:auto;padding:9px 16px">+ kg</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- ======================= COMO FUNCIONA ======================= -->
+    <section class="section section--alt">
+        <div class="container">
+            <div class="section__head" data-reveal>
+                <span class="eyebrow" id="how-eyebrow">Como funciona</span>
+                <h2 class="section__title" id="how-title">Do zero ao primeiro treino em minutos.</h2>
+            </div>
+            <div class="steps">
+                <div class="step" data-reveal><div class="step__n">1</div><h3 id="how-1-t">Crie sua conta</h3><p id="how-1-d">Rápido, direto, sem burocracia.</p></div>
+                <div class="step" data-reveal><div class="step__n">2</div><h3 id="how-2-t">Responda algumas perguntas</h3><p id="how-2-d">Objetivo, nível e rotina.</p></div>
+                <div class="step" data-reveal><div class="step__n">3</div><h3 id="how-3-t">Gere seu plano</h3><p id="how-3-d">Sua semana montada na hora.</p></div>
+                <div class="step" data-reveal><div class="step__n">4</div><h3 id="how-4-t">Registre seus treinos</h3><p id="how-4-d">Carga, repetições e séries.</p></div>
+                <div class="step" data-reveal><div class="step__n">5</div><h3 id="how-5-t">Acompanhe a evolução</h3><p id="how-5-d">Veja o progresso ao longo do tempo.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================== RECURSOS ========================== -->
+    <section class="section" id="recursos">
+        <div class="container">
+            <div class="section__head" data-reveal>
+                <span class="eyebrow" id="feat-eyebrow">Recursos</span>
+                <h2 class="section__title" id="feat-title">Feito para tirar você do improviso.</h2>
+                <p class="section__sub" id="feat-sub">O essencial já está disponível. Alguns recursos estão planejados para as próximas versões.</p>
+            </div>
+            <div class="cards">
+                <div class="card" data-reveal>
+                    <div class="card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v16"/></svg></div>
+                    <h3 id="feat-1-t">Plano automático</h3>
+                    <p id="feat-1-d">Responda algumas perguntas e receba uma semana de treino organizada por dias.</p>
+                </div>
+                <div class="card" data-reveal>
+                    <div class="card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+                    <h3 id="feat-2-t">Biblioteca de exercícios</h3>
+                    <p id="feat-2-d">Consulte como executar cada movimento, com músculos e variações.</p>
+                </div>
+                <div class="card" data-reveal>
+                    <div class="card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10M18 20V4M6 20v-4"/></svg></div>
+                    <h3 id="feat-3-t">Registro de treino</h3>
+                    <p id="feat-3-d">Anote carga, repetições e séries. Seu histórico fica salvo a cada treino.</p>
+                </div>
+                <div class="card" data-reveal>
+                    <div class="card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg></div>
+                    <h3 id="feat-4-t">Progresso e XP</h3>
+                    <p id="feat-4-d">Acompanhe sua constância e veja sua evolução de forma simples e visual.</p>
+                </div>
+                <div class="card" data-reveal>
+                    <div class="card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M3 20h2M5 20a7 7 0 0 1 14 0M12 3v4M9 7h6"/></svg></div>
+                    <h3>
+                        <span id="feat-5-t">Treino manual</span>
+                        <span class="tag-soon" id="feat-5-soon">Em breve</span>
+                    </h3>
+                    <p id="feat-5-d">Monte e ajuste treinos por conta própria, com mais controle sobre cada detalhe.</p>
+                </div>
+                <div class="card" data-reveal>
+                    <div class="card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 4.6L18.5 9 14 11.4 12 16l-2-4.6L5.5 9l4.6-1.4z"/></svg></div>
+                    <h3>
+                        <span id="feat-6-t">EvolveFit Plus</span>
+                        <span class="tag-soon" id="feat-6-soon">Planejado</span>
+                    </h3>
+                    <p id="feat-6-d">Recursos avançados, relatórios mais completos e ajustes inteligentes nas próximas versões.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================= SHOWCASE / TELAS ======================= -->
+    <section class="section section--alt">
+        <div class="container">
+            <div class="section__head" data-reveal>
+                <span class="eyebrow" id="show-eyebrow">Por dentro do app</span>
+                <h2 class="section__title" id="show-title">Telas pensadas para o treino, não para te distrair.</h2>
+            </div>
+            <div class="showcase">
+                <!-- Dashboard -->
+                <div class="shot" data-reveal>
+                    <div class="shot__frame"><div class="scr">
+                        <div class="scr__top"><div class="scr__hi"><span id="s1-hi">Hoje</span></div><div class="scr__avatar" style="width:28px;height:28px;font-size:.7rem">M</div></div>
+                        <div class="scard scard--accent"><div class="scard__label" id="s1-label">Treino do dia</div><div class="scard__title" id="s1-title">Peito &amp; Tríceps</div><div class="scard__meta">6 · 45 min</div></div>
+                        <div class="scr__days"><div class="scr__day done"><b></b></div><div class="scr__day done"><b></b></div><div class="scr__day today"><b></b></div><div class="scr__day"><b></b></div><div class="scr__day"><b></b></div></div>
+                    </div></div>
+                    <div class="shot__cap"><b id="cap1-t">Dashboard</b><span id="cap1-s">seu dia, num relance</span></div>
+                </div>
+                <!-- Treino do dia -->
+                <div class="shot" data-reveal>
+                    <div class="shot__frame"><div class="scr">
+                        <div class="scr__top"><div class="scr__hi"><span id="s2-hi">Treino</span></div><span class="scr__chip"><i></i>32:10</span></div>
+                        <div class="scard">
+                            <div class="scr__row"><span class="scr__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6.5 6.5 17.5 17.5"/></svg></span><div class="scr__rl"><b id="s2-e1">Supino</b><span>4 × 8</span></div><span class="scr__rv">40kg</span></div>
+                            <div class="scr__row"><span class="scr__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6.5 6.5 17.5 17.5"/></svg></span><div class="scr__rl"><b id="s2-e2">Crucifixo</b><span>3 × 12</span></div><span class="scr__rv">14kg</span></div>
+                            <div class="scr__row"><span class="scr__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6.5 6.5 17.5 17.5"/></svg></span><div class="scr__rl"><b id="s2-e3">Tríceps</b><span>3 × 12</span></div><span class="scr__rv">25kg</span></div>
+                        </div>
+                    </div></div>
+                    <div class="shot__cap"><b id="cap2-t">Treino do dia</b><span id="cap2-s">registre série a série</span></div>
+                </div>
+                <!-- Biblioteca -->
+                <div class="shot" data-reveal>
+                    <div class="shot__frame"><div class="scr">
+                        <div class="scr__top"><div class="scr__hi"><span id="s3-hi">Biblioteca</span></div></div>
+                        <div class="scr__search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><span id="s3-search">Buscar exercício</span></div>
+                        <div class="scr__tags"><span class="scr__tag on" id="s3-t1">Peito</span><span class="scr__tag" id="s3-t2">Costas</span><span class="scr__tag" id="s3-t3">Pernas</span><span class="scr__tag" id="s3-t4">Ombro</span></div>
+                        <div class="scard" style="padding:10px"><div class="scr__row" style="padding:6px 0"><span class="scr__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6.5 6.5 17.5 17.5"/></svg></span><div class="scr__rl"><b id="s3-e1">Supino inclinado</b></div></div><div class="scr__row" style="padding:6px 0"><span class="scr__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6.5 6.5 17.5 17.5"/></svg></span><div class="scr__rl"><b id="s3-e2">Crossover</b></div></div></div>
+                    </div></div>
+                    <div class="shot__cap"><b id="cap3-t">Biblioteca</b><span id="cap3-s">como fazer cada exercício</span></div>
+                </div>
+                <!-- Progresso -->
+                <div class="shot" data-reveal>
+                    <div class="shot__frame"><div class="scr">
+                        <div class="scr__top"><div class="scr__hi"><span id="s4-hi">Progresso</span></div></div>
+                        <div class="scard"><div class="scr__stat"><b>14</b><span class="scr__pill">+3</span></div><span class="scr__rl"><span id="s4-stat">treinos no mês</span></span>
+                            <div class="scr__bars" style="height:54px;margin-top:10px"><span style="height:40%"></span><span style="height:60%"></span><span style="height:52%"></span><span style="height:78%"></span><span style="height:90%"></span></div>
+                        </div>
+                        <div class="scard" style="display:flex;justify-content:space-between;align-items:center"><span class="scr__rl"><b id="s4-seq">Sequência</b><span id="s4-seq-s">recorde pessoal</span></span><b style="font-family:var(--font-display);color:#fff">9</b></div>
+                    </div></div>
+                    <div class="shot__cap"><b id="cap4-t">Progresso</b><span id="cap4-s">o que mudou ao longo do tempo</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= FREE vs PLUS ========================= -->
+    <section class="section">
+        <div class="container">
+            <div class="section__head" data-reveal>
+                <span class="eyebrow" id="plan-eyebrow">Free e Plus</span>
+                <h2 class="section__title" id="plan-title">Comece de graça. O Plus vem depois.</h2>
+                <p class="section__sub" id="plan-sub">O plano gratuito já entrega o essencial para treinar com direção. O Plus está planejado para versões futuras.</p>
+            </div>
+            <div class="plans">
+                <div class="plan" data-reveal>
+                    <div class="plan__name"><h3 id="plan-free-name">Free</h3><span class="plan__badge free" id="plan-free-badge">Disponível</span></div>
+                    <p class="plan__desc" id="plan-free-desc">Tudo que você precisa para sair do improviso hoje.</p>
+                    <ul>
+                        <li><svg class="c-free" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span id="plan-free-1">Criar conta e fazer onboarding</span></li>
+                        <li><svg class="c-free" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span id="plan-free-2">Gerar seu plano de treino</span></li>
+                        <li><svg class="c-free" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span id="plan-free-3">Registrar treinos, carga e repetições</span></li>
+                        <li><svg class="c-free" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span id="plan-free-4">Progresso básico</span></li>
+                        <li><svg class="c-free" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span id="plan-free-5">Biblioteca de exercícios</span></li>
+                    </ul>
+                    <div class="plan__foot"><a class="btn btn--primary btn--block" id="plan-free-cta" href="#" data-app-link>Começar agora</a></div>
+                </div>
+
+                <div class="plan plan--plus" data-reveal>
+                    <div class="plan__name"><h3 id="plan-plus-name">Plus</h3><span class="plan__badge soon" id="plan-plus-badge">Planejado</span></div>
+                    <p class="plan__desc" id="plan-plus-desc">Mais controle e profundidade, nas próximas versões.</p>
+                    <ul>
+                        <li><svg class="c-soon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg><span id="plan-plus-1">Novos planos e variações</span></li>
+                        <li><svg class="c-soon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg><span id="plan-plus-2">Ajustes avançados de treino</span></li>
+                        <li><svg class="c-soon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg><span id="plan-plus-3">Substituições inteligentes de exercícios</span></li>
+                        <li><svg class="c-soon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg><span id="plan-plus-4">Relatórios mais completos</span></li>
+                        <li><svg class="c-soon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg><span id="plan-plus-5">Recursos com IA, conforme forem ficando prontos</span></li>
+                    </ul>
+                    <div class="plan__foot"><span class="note-box" id="plan-plus-note" style="margin-top:0;display:block">Sem pagamento por enquanto. Quando o Plus chegar, você fica sabendo dentro do app.</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================== SEGURANÇA ========================== -->
+    <section class="section section--alt">
+        <div class="container">
+            <div class="safety" data-reveal>
+                <div class="safety__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                <div>
+                    <h3 id="safe-title">Uma ferramenta de apoio — não um substituto.</h3>
+                    <p id="safe-text">O EvolveFit ajuda a organizar e registrar seus treinos, mas não substitui médico, nutricionista, personal trainer ou fisioterapeuta. Em caso de dor, lesão ou condição específica, procure orientação profissional antes de treinar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================== CTA FINAL ========================== -->
+    <section class="section cta-final">
+        <div class="container">
+            <div class="cta-final__box" data-reveal>
+                <h2 id="cta-title">Comece simples. Registre. Evolua.</h2>
+                <p id="cta-sub">Crie sua conta e faça seu primeiro treino com direção ainda hoje.</p>
+                <a class="btn btn--primary btn--lg" id="cta-btn" href="#" data-app-link>
+                    Abrir EvolveFit
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================ FOOTER ============================ -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3 class="footer-logo">EvolveFit</h3>
-                    <p id="footer-tagline">Transformando vidas através de hábitos saudáveis e motivação!</p>
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <div class="footer__logo">EvolveFit</div>
+                    <p id="footer-tagline">Treino com direção, registro simples e evolução que você consegue ver.</p>
+                    <a class="btn btn--primary btn--sm" id="footer-cta" href="#" data-app-link>Abrir app</a>
                 </div>
-                <div class="footer-section">
-                    <h4 id="footer-links">Links Rápidos</h4>
-                    <ul>
-                        <li><a href="index.html" id="footer-link-inicio">Início</a></li>
-                        <li><a href="sobre.html" id="footer-link-sobre">Sobre</a></li>
-                        <li><a href="recursos.html" id="footer-link-recursos">Recursos</a></li>
-                        <li><a href="download.html" id="footer-link-download">Download</a></li>
-                    </ul>
+                <div class="footer__col">
+                    <h4 id="footer-nav">Navegação</h4>
+                    <a href="index.html" id="footer-l-inicio">Início</a>
+                    <a href="recursos.html" id="footer-l-recursos">Recursos</a>
+                    <a href="sobre.html" id="footer-l-sobre">Sobre</a>
                 </div>
-                <div class="footer-section">
-                    <h4 id="footer-social">Redes Sociais</h4>
-                    <div class="social-links">
-                        <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
-                            <span class="social-icon">📷</span> Instagram
-                        </a>
-                        <a href="https://tiktok.com" target="_blank" rel="noopener" aria-label="TikTok">
-                            <span class="social-icon">🎵</span> TikTok
-                        </a>
-                    </div>
+                <div class="footer__col">
+                    <h4 id="footer-product">Produto</h4>
+                    <a href="download.html" id="footer-l-acesso">Acessar app</a>
+                    <a href="#recursos" id="footer-l-funcoes">Funcionalidades</a>
+                    <a href="#" data-app-link id="footer-l-abrir">Abrir EvolveFit</a>
                 </div>
-                <div class="footer-section">
-                    <h4 id="footer-contact">Contato</h4>
-                    <p><a href="mailto:contato@evolvefit.com">contato@evolvefit.com</a></p>
-                    <p><a href="privacidade.html" id="footer-privacy">Política de Privacidade</a></p>
+                <div class="footer__col">
+                    <h4 id="footer-legal">Legal</h4>
+                    <a href="privacidade.html" id="footer-l-privacidade">Privacidade</a>
+                    <a href="mailto:contato@evolvefit.com">contato@evolvefit.com</a>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 EvolveFit. <span id="footer-rights">Todos os direitos reservados.</span></p>
+            <div class="footer__bottom">
+                <span>© 2026 EvolveFit</span>
+                <span id="footer-rights">Treine com direção.</span>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript -->
+    <script src="js/app-config.js"></script>
     <script src="js/translations.js"></script>
     <script src="js/language.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/onboarding.js"></script>
 </body>
 </html>

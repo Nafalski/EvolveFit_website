@@ -1,84 +1,82 @@
-# EVOLVEFIT — WEBSITE OFICIAL
+# EvolveFit — Site oficial
 
-Este repositório contém o site oficial do EvolveFit.
-O site foi criado para apresentar o aplicativo, explicar suas funcionalidades e direcionar os usuários para a plataforma.
+Landing page pública do **EvolveFit**, um app de treino que ajuda a pessoa a treinar com mais direção: criar um plano, registrar cargas e repetições e acompanhar a evolução.
 
-O website funciona como a porta de entrada do EvolveFit, oferecendo uma visão clara do produto, seus diferenciais e seus planos.
+O site é a vitrine do produto. Ele apresenta o EvolveFit, explica a proposta e leva o usuário para o app/PWA.
 
----
-
-## OBJETIVO DO SITE
-
-O site do EvolveFit tem como objetivos:
-
-* Apresentar o conceito do aplicativo EvolveFit
-* Explicar como a Inteligência Artificial é usada no treino e na alimentação
-* Mostrar os principais benefícios do uso diário do app
-* Comparar os planos Free e Premium
-* Direcionar o usuário para acessar o aplicativo (PWA)
-* Conectar com as redes sociais oficiais
+- **App/PWA:** https://evolve-fit-app.vercel.app
+- O **aplicativo** (Next.js, banco, autenticação) fica em **outro repositório** (`EvolveFit_APP`). Este repositório é **somente o site**.
 
 ---
 
-## ESTRUTURA DO SITE
+## O que o site faz
 
-O site é organizado nas seguintes seções:
-
-* Seção inicial (Hero) com apresentação e chamada para ação
-* Como funciona: questionário e criação automática do plano
-* Funcionalidades do aplicativo
-* Motivação diária personalizada
-* Comparação de planos
-* Links para redes sociais
-* Rodapé com informações gerais
+- Apresenta o produto e o problema que ele resolve (treino improvisado, sem registro).
+- Explica como funciona (criar conta → responder perguntas → gerar plano → registrar → acompanhar).
+- Mostra os recursos já disponíveis e os que estão **planejados** (treino manual avançado, EvolveFit Plus, recursos com IA — ainda não prontos).
+- Direciona para o app com CTAs claros ("Começar agora", "Abrir app").
 
 ---
 
-## IDENTIDADE VISUAL
+## Estrutura
 
-Cores utilizadas no projeto:
+```
+SITE/
+  index.html         Home (hero, problema, solução, como funciona, recursos, telas, Free/Plus, segurança, CTA)
+  recursos.html      Recursos (disponível agora / planejado)
+  sobre.html         Sobre o produto
+  download.html      Acesso ao app/PWA + QR Code + instruções de instalação PWA
+  privacidade.html   Política de privacidade
+  css/style.css      Design system (tokens em :root, tema claro/escuro)
+  js/app-config.js   Fonte única da URL do app/PWA (constante EVOLVEFIT_APP_URL)
+  js/translations.js Textos PT/EN
+  js/language.js     Troca de idioma
+  js/main.js         Menu mobile, tema, reveal no scroll
+  js/qrcode.js       Gera o QR Code apontando para o app
+  imagem/            Logo e ícones
+```
 
-* Azul: tecnologia e confiança
-* Vermelho: energia e ação
-* Preto: força e disciplina
-* Cinza claro: equilíbrio e clareza
-
-O design é moderno, limpo e responsivo, com foco em clareza e boa experiência do usuário.
-
----
-
-## TECNOLOGIAS UTILIZADAS
-
-* HTML5
-* CSS3
-* JavaScript
-* Design responsivo (mobile-first)
-
-A stack poderá evoluir conforme o projeto avançar.
+Stack: **HTML, CSS e JavaScript puro** — sem framework e sem etapa de build.
 
 ---
 
-## STATUS DO PROJETO
+## Link do app (fonte única)
 
-Projeto em desenvolvimento.
+A URL do app/PWA fica **apenas** em `SITE/js/app-config.js`:
 
-O site faz parte de um projeto prático de estudo e portfólio, focado em desenvolvimento web e produto digital.
+```js
+const EVOLVEFIT_APP_URL = 'https://evolve-fit-app.vercel.app';
+```
 
----
-
-## RELAÇÃO COM O APLICATIVO
-
-Este site está diretamente ligado ao projeto EVOLVEFIT APP, que contém o desenvolvimento do aplicativo, a Inteligência Artificial, os planos de treino, alimentação, motivação diária e gamificação.
+Todos os botões com `data-app-link` e o QR Code usam essa constante. Para mudar o destino, altere só esse arquivo.
 
 ---
 
-## AUTOR
+## Como testar localmente
 
-Marco Nafalski
+Como é um site estático, basta servir a pasta `SITE/`:
+
+```bash
+# Python 3
+python -m http.server 8099 --directory SITE
+# depois abra http://localhost:8099
+```
+
+Ou abra `SITE/index.html` direto no navegador (o QR Code usa um CDN, então precisa de internet).
+
+Verifique: menu mobile, tema claro/escuro, troca PT/EN, botões e QR apontando para o app, e o console sem erros.
 
 ---
 
-## LICENÇA
+## Idiomas e tema
 
-Projeto de uso educacional e experimental.
-Todos os direitos reservados.
+- **PT/EN** via `translations.js` (cada texto tem um `id`). O seletor no menu troca o idioma e salva a preferência.
+- **Tema claro/escuro** com escuro como padrão; a preferência é salva em `localStorage`.
+
+---
+
+## Status
+
+Projeto em desenvolvimento, de estudo e portfólio. O site não promete recursos que ainda não existem: o que está por vir aparece marcado como "em breve" ou "planejado".
+
+**Autor:** Marco Nafalski · uso educacional e experimental.
