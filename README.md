@@ -73,10 +73,26 @@ Verifique: menu mobile, tema claro/escuro, troca PT/EN, botões e QR apontando p
 - **PT/EN** via `translations.js` (cada texto tem um `id`). O seletor no menu troca o idioma e salva a preferência.
 - **Tema claro/escuro** com escuro como padrão; a preferência é salva em `localStorage`.
 
+## Identidade visual
+
+Paleta **Onyx + Candy Blue** (fitness-tech premium): fundo Onyx (`#020202`), superfícies em carvão, texto branco gelo e **Candy Blue** (`#B2D5E5`) como destaque/ação. Tokens centralizados em `:root` (e `:root.light`) no `css/style.css`. Tipografia: **Sora** (títulos) + **Manrope** (corpo).
+
+---
+
+## Recursos e roadmap
+
+A página `recursos.html` separa os recursos em **Disponível agora** (plano automático, treino manual, Biblioteca de Exercícios, registro de treino, progresso e XP) e **Planejado para próximas versões** (EvolveFit Plus, plano automático com IA, alimentação/nutrição, estimativa de calorias, IA para ajustes, relatórios avançados, mídia completa e loja de XP).
+
+A meta de lançamento aparece num destaque de roadmap (na home e em `recursos.html`):
+
+> **EvolveFit 1.0 — lançamento oficial previsto para 15 de setembro**
+
+A data é apresentada como **meta de lançamento**, não como garantia de que todos os recursos planejados estarão prontos.
+
 ---
 
 ## Status
 
-Projeto em desenvolvimento, de estudo e portfólio. O site não promete recursos que ainda não existem: o que está por vir aparece marcado como "em breve" ou "planejado".
+Projeto em desenvolvimento, de estudo e portfólio. O site não promete recursos que ainda não existem: o que está por vir aparece marcado como "planejado" ou "em breve".
 
 **Autor:** Marco Nafalski · uso educacional e experimental.

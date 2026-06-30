@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const theme = isLight ? 'light' : 'dark';
             try { localStorage.setItem('evolvefit-theme', theme); } catch (e) {}
             const meta = document.querySelector('meta[name="theme-color"]');
-            if (meta) meta.setAttribute('content', isLight ? '#F4F7FC' : '#070B12');
+            if (meta) meta.setAttribute('content', isLight ? '#F5FAFC' : '#020202');
         });
     }
 
